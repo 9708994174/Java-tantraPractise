@@ -1,21 +1,14 @@
 public class ReverseString {
-    public static void main(String[] args) {
-        String str = "hello";
-        String reversed = reverse(str);
-        System.out.println("Reversed string: " + reversed);
-    }
-    
-    public static String reverse(String s) {
-        char[] chars = s.toCharArray();
-        int left = 0;
-        int right = chars.length - 1;
-        while (left < right) {
-            char temp = chars[left];
-            chars[left] = chars[right];
-            chars[right] = temp;
-            left++;
-            right--;
+    public static String reverse(String str) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(str.charAt(i));
         }
-        return new String(chars);
+        return reversed.toString();
+    }
+
+    public static void main(String[] args) {
+        String str = "Hello World";
+        System.out.println(reverse(str));
     }
 }
