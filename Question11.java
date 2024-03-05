@@ -1,6 +1,7 @@
-package q10807;
-public class PrintHello {
-	public static void main(String[] args){ 
-		System.out.println("Hello, I am learning Java!");
+package q10793;
+public class CommandLineArgumentDemo {
+	public static void main(String[] args) {
+		//Write the code fragment in the below println(     ) method to print only the second argument
+		System.out.println( args[1] );
 	}
 }

@@ -1,9 +1,7 @@
-package q10808;
-public class PrintHello {
+package q10794;
+public class CommandLineArgumentDemo {
 	public static void main(String[] args) {
-		String text1 = "He";
-		String text2 = "llo";
-		String text3 = text1 + text2;
-		System.out.println("text3 = " + text3);
+		//Write the code fragment in the below println(     ) method to print only the fourth argument
+		System.out.println( args[3]   );
 	}
 }
