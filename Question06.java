@@ -1,27 +1,33 @@
-The numbering system which uses base-8 is called Octal System. A base (also called radix) is the number of unique digits or symbols (including 0) used to represent a given number. In Octal System (base-8) a total of 8 digits (0, 1, 2, 3, 4, 5, 6 and 7) are used to represent a number of any size (magnitude).
-For example, Zero is represented as 0, where
-0 = (0 * 80) = (0 * 1)
-Similarly 1, 2 ...up to 7 One (1):
-1 = (1 * 80) = (1 * 1)
-2 = (2 * 80) = (2 * 1)
-...
-7 = (7 * 80) = (7 * 1)
-Now, lets try representing Twenty One (21), since 0 to 7 are the only digits we can use to represent 21, let us divide 21 by 8 and write down [quotient][reminder], i.e.: [2][5]
-21 = (2 * 81) + (5 * 80) = (16) + (5)
-Similarly, lets try representing Four Hundred and Twenty One (421), let us divide 421 by 8 and write down [quotient][reminder], i.e.: [52][5] (further dividing 52 by 8 we get [6][4]), which is [6][4][5]
-421 = (6 * 82) + (4 * 81 + (5 * 80) = (384) + (32) + (5)
+The Float class wraps a primitive float value.
 
-Click on  to understand Decimal to Octal conversion.
+This class provides constants and methods that are useful while working with float(s).
 
-In Java, Octal numerals are prefixed with a leading 0 (zero). For example, to store an octal value of seven into a variable numberSeven, we write
-int numberSeven = 07;
-Similarly, if we want to store a octal representation of decimal number 9 into a variable numberNine, we write
-int numberNine = 011;
-Select all the correct statements given below.
+For example, it has a method Float.parseFloat(String s) which can be used to convert a string value to its corresponding float value.
+float x = Float.parseFloat("4.5");
+//parses the string literal "4.5" and returns a float value of 4.5f In the below code, the main method of CalculateDifference will be passed two arguments.
+Both the values can be any number between Float.MIN_VALUE to Float.MAX_VALUE.
+
+Complete the below code so that it produces the correct output.
+
+Note: You can assume that the first string value passed in args[0] and the second string value passed in args[1] will always contain a decimal number with fractional part (like 2.99, 3.782, 4.7, etc.). It means that you can directly use the Float.parseFloat(text) method.
+
+[Hint: You can convert arg[0] to float by the statement float value = Float.parseFloat(args[0]);]
+
+Note: Please don't change the package name.
+
+
 
 Answer 
 
-
-In Octal System, Decimal 8 is represented as 10
-In Octal System, Decimal of 10 is written as 012
-
+package q10782;
+public class CalculateDifference {
+	public static void main(String[] args) {
+		// In the below two lines write code to convert
+		// the string value passed in args[0] and args[1] into int values using Float.parseFloat method
+		// convert the value in args[0] to int and store in firstValue
+		// convert the value in args[1] to int and store in secondValue
+		float firstValue =Float.parseFloat(args[0]) ;
+		float secondValue = Float.parseFloat(args[1]);
+		System.out.println("The difference of args[0] and args[1] is : " + (firstValue - secondValue));
+	}
+}

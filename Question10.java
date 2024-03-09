@@ -1,37 +1,26 @@
-The numbering system which uses base-16 is called hexadecimal system (or simply hex).
+The below statement declares a float and a double as x and y initialized to 3.4f and 5.1d respectively.
+float x = 3.4f;
+double y = 5.1d;
+However, when we try to perform an addition operation, such as given below, we get a compilation error : Type mismatch: cannot convert from double to float.
+float sum = x + y;
+When a binary operator (like, *, / ,%, +, etc. ) is being used, if at least one operand is of type double and the other float then the operation is carried out by automatically widening the float operand also to double.
+And for all other numeric types (like byte, short, char, int and long) the operands are automatically widened to float and the result is also a float.
 
-In binary (base-2) a total of 2 digits (0 and 1) are used to represent a number of any size (magnitude) and in octal (base-8) a total of 8 digits (0 to 7) are used.
+In our case, since y is of type double and x is of type float, x is widened to double. And the resultant which is also a double is assigned to sum (which is of type float).
+A compile-time error occurs while assigning the result (of type double) to sum. To fix it, we will have to explicitly type cast the result to a float, as shown below.
+float sum = (float)(x + y);
+Applying the above understanding identify and correct the error so that the correct output is produced.
 
-Similarly in hexadecimal system (base-16), a total of 16 digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F) are used to represent a number of any size (magnitude).
+Note: Please don't change the package name.
 
-The highest digit in hex is (F)16. The number (F)16 in binary is represented as (1111)2. You will notice that we are using four binary digits (bits) to represent the highest hexadecimal digit.
+Answer 
 
-In hex to binary conversion, we will have to use four bits to represent each hex digit.
-
-The following table shows the conversion of each hex digit into their corresponding binary digits.
-
-Hexadecimal	0	1	2	3	4	5	6	7	8	9	A	B	C	D	E	F
-Binary	0000	0001	0010	0011	0100	0101	0110	0111	1000	1001	1010	1011	1100	1101	1110	1111
-
-For example, hexadecimal number 0x5AF6 is converted into binary as:
-Hex Number    ->    5    A    F    6
-Binary Number ->  0101 1010 1111 0110
-Hence, 0x5AF6 is (0101101011110110)2
-
-Click on  to understand hexadecimal to binary conversion.
-
-Similarly while converting a binary number into a hex number, we first divide the binary number into groups of 4 digits each, starting from the right most side. Each of these four binary digits are replaced with their corresponding octal digits.
-
-In case we find that the left most group of binary digits do not have four digits, we prefix the required number of zeros to make it four binary digits.
-
-For example, let us try convert a binary 1101100 into hex.
-Binary Number ->    110 1100
-Binary Number ->    0110 1100  // After prefixing zeros in the left most group
-Octal Number  ->      6    C
-Hence, the hex equivalent of the given binary 1101100 is 0x6C
-
-Click on  to understand binary to hexadecimal conversion.
-
-Select all the correct statements given below.
-Binary number (10101110)2 is equivalent to the hexadecimal number (AE)16.
-Hexadecimal number (369)16 is equivalent of binary number (1101101001)2.
+package q10858;
+public class FloatDemo {
+	public static void main(String[] args) {
+		float x = 1.5f;
+		double y = 1.1d;
+		float sum = (float)(x + y);
+		System.out.println("sum = " + sum);// should print 2.6
+	}
+}

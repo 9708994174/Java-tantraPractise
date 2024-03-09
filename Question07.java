@@ -1,41 +1,28 @@
-The numbering system which uses base-2 is called binary, while the numbering system which uses base-8 is called an octal.
+In Java, the double data type denotes a 64-bit double-precision 64-bit IEEE 754 floating point number. In Java, a double is more commonly used than a float in calculations like sine, cos, tan etc... Like in float a double can represent
+ both positive and negative numbers
+ positive infinity (Double.POSITIVE_INFINITY) and negative infinity (Double.NEGATIVE_INFINITY)
+ NaN (a special Not-a-Number value, i.e. mathematically undefinable number).
+A NaN value is used to represent the result of invalid operations such as dividing zero by zero, or square root of a negative number. Its value is represented by a constant in Float class (Double.NaN) etc.
+The 64 bits of a double are divided into three parts.
+   - 1 Sign bit is used to mark the sign of the number.
+   - 11 bits are used to determine the value of the exponent.
+   - remaining 52 bits are used to determine the mantissa (significand).
+For more info Double Precision Floating Point Numbers
 
-In binary system (base-2) a total of 2 digits (0 and 1) are used to represent a number of any size (magnitude), where as in octal system (base-8) a total of 8 digits (0, 1, 2, 3, 4, 5, 6 and 7) are used to represent a number of any size (magnitude).
 
-The highest digit in the octal system is (7)8. The number (7)8 in binary is represented as (111)2. You will notice that we are using three binary digits (bits) to represent the highest octal digit.
-
-In octal to binary conversion, we will have to use three bits to represent each octal digit.
-
-The following table shows the conversion of each octal digit into their corresponding binary digits.
-
-Octal	0	1	2	3	4	5	6	7
-Binary	000	001	010	011	100	101	110	111
-
-For example, an octal number 0246 is converted into binary as
-
-Octal Number  ->   2   4   6
-Binary Number ->  010 100 110
-Hence, 0246 is (010100110)2.
-
-Click on  to understand octal to binary conversion.
-
-Similarly while converting a binary number into an octal, we first divide the binary number into groups of 3 digits each starting from the right most side. Each of these three binary digits are replaced with their corresponding octal digits.
-
-In case we find that the left most group of binary digits do not have three digits, we prefix the required number of zeros to make it three binary digits.
-
-For example, let us try convert a binary 1101100 into octal.
-
-Binary Number ->    1 101 100
-Binary Number ->  001 101 100  // After prefixing zeros in the left most group
-Octal Number  ->   1   5   4
-Hence, the octal equivalent of the given binary 1101100 is 0154
-
-Click on  to understand binary to octal conversion.
+The primitive type double has a corresponding wrapper class called Double. Both double and Double can be used interchangeably. Which means, we can say:
+double num1 = 3.4d;
+Double num2 = 1.2d;
+Double total = num1 + num2;
+double valueOfNum2 = total - num1;
+The fixed values 3.4d, 1.2d assigned to num1 and num2 respectively are called double literals. These are suffixed with d to indicate that they are double precision floating point values.
+The default value of a primitive double is 0.0d, when not initialized. However, the default value of a reference of type Double is null, when not initialized.
+We will learn more about the wrapper class Double later.
 
 Select all the correct statements given below.
 
+
+
 Answer 
 
-Each octal digit is represented using three bits.
-Binary number (10101010)2 is equivalent to an octal number (252)8.
-An octal number (364)8 is equivalent of binary number (011110100)2.
+A double uses 8 bytes of memory
