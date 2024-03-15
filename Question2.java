@@ -1,24 +1,45 @@
-In the below code
-double x = 2.3d;
-String name = "Bhargo";
-byte[] buffer = new byte[1024];
-x is called a variable
-name is called a reference
-buffer is called a reference
-A variable can be compared to a cup, which holds the value of the primitive date type.
-A reference can be compared to a cup, which holds the address of the object it points to.
+In Java, below are the comparison and relational operators:
+Operator	Description
+==	Checks if two values are equal
+!=	Checks if two values are not equal
+>	Checks for greater-than condition
+>=	Checks for greater-than-or-equals condition
+<	Checks for less-than condition
+<=	Checks for less-than-or-equals condition.
 
-When not initialized, the default value of a variable is 0 for numeric primitive types and false for boolean types.
-When not initialized, the default value of a reference is null. If a reference has a null value, it means that the reference does not refers (points) to any object.
-Select all the correct statements that apply to the below code.
-String name = null;
-int age = null;
-byte[] buffer = null;
-boolean status = null;
+The usage is
+operand1 operator operand2
+
+According to Java coding conventions, a single space should be provided to the left and right of the operator.
+
+The result of the expression involving any of the above mentioned comparison or relational operators is always a boolean value (true or false).
+
+Select all valid statements for the below code:
+int x = 3;
+int y = 4;
+int z = 3;
+if (x == z) {
+	System.out.println("x and z are equal");
+}
+if (x > z) {
+	System.out.println("x is greater than z");
+} else {
+	System.out.println("x is not greater than z");
+}
+if (x != y) {
+	System.out.println("x and y are not equal");
+}
+if (x <= z) {
+	System.out.println("x is less than or equal to z");
+} else {
+	System.out.println("x is not less than or equal to z");
+}
+
+
 
 
 Answer 
 
+x and z are equal
 
-Statement String name = null; is correct
-Statement byte[] buffer = null; is correct
+x and y are not equal

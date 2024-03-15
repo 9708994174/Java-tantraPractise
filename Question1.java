@@ -1,27 +1,35 @@
-In any programming language, a variable is a named storage location. That name is also called as identifier. For example:
-int age = 25;
-String name = "Bhargo";
-Java variables names must start with a character and can include digits. We will learn more about Java Naming and Coding conventions later.
+In Java, we have 5 arithmetic operators:
+Operator	Description
++	Used for addition and string concatenation
+-	Used for subtraction
+*	Used for multiplication
+/	Used for division
+%	Remainder/Modulus operator for finding remainder
 
-Java being a strongly typed language, every variable has a type associated.
+The usage is
+operand1 operator operand2
 
-In Java, there are two types of variables
- Primitive Type ( henceforth we will refer to them simply as variables)
- Reference Type ( henceforth we will refer to them as references)
-The primitive types are boolean and the remaining numeric types (byte, short, int, long, float, double and char)
+According to Java coding conventions, a single space should be provided to the left and right of an operator.
 
-The reference types can be of any class or of type array.
+Note: When any of the above arithmetic operators is used in an expression, if at least one operand is of type double, float or long then the operation is carried out by automatically widening the other operand also to that former's type (if it is not already of the former's type) and the result is also of the former's type. And for all other numeric types (like byte, short, char) the operands are automatically widened to int and the result is also an int.
 
-For example, in the earlier code snippet, we will refer to age as a variable since it is of a primitive type (int).
-Similarly we refer to name as a reference, since it is of type String class.
+See and retype the below code to understand how arithmetic operators are used.
 
-Select all the correct statements that apply to the below code.
-char gender = 'M';
-Date today = new Date();
-byte[]  buffer = new byte[1024];
-String[] namesArr = {"Apollo", "Vishnu", "Minerva", "Saraswati"};
+Note: Please don't change the package name.
 
-Answer 
 
-buffer is a reference
-namesArr is a reference
+
+//Answer 
+
+package q10827;
+public class ArithmeticOperatorsDemo {
+	public static void main(String[] args) {
+		int x = 16;
+		int y = 3;
+		System.out.println("x + y = " + (x + y));
+		System.out.println("x - y = " + (x - y));
+		System.out.println("x * y = " + (x * y));
+		System.out.println("x / y = " + (x / y));
+		System.out.println("x % y = " + (x % y));
+	}
+}
