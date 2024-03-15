@@ -1,30 +1,23 @@
-The below table shows the primitive types and their corresponding wrapper classes in Java:
-char    Character     Number Types
-==================================
-byte    Byte          Byte.valueOf(String s)
-short   Short         Short.valueOf(String s)
-int     Integer       Integer.valueOf(String s)
-float   Float         Float.valueOf(String s)
-double  Double        Double.valueOf(String s)
-long    Long          Long.valueOf(String s)All the above wrapper classes present for the number types contain a useful method called valueOf(), which converts a string to an instance of that number type.
+There is yet another conditional operator called the ternary operator ?:. Its usage is
+condition ? expression1 : expression2
+The condition should always evaluate to a boolean. If the condition evaluates to true, expression1 is evaluated and its value returned, else expression2 is evaluated and its value returned. For example,
+int javaCertificationMarks = 75;
+int passMarks = 65;
+String result = (javaCertificationMarks > passMarks) ? "Passed Java Certification" : "Failed Java Certification"; 
 
-See and retype the below code to understand the usage of the valueOf() method in the wrapper classes.
+In the above code, since the condition javaCertificationMarks > passMarks evaluates to true, result is assigned the value "Passed Java Certification"
+
+See and retype the below code to understand how ternary operator is used.
 
 Note: Please don't change the package name.'
 
-package q10825;
-public class WrapperClassDemo {
+
+package q10834;
+public class TernaryOperatorsDemo {
 	public static void main(String[] args) {
-		String text1 = "101";
-		String text2 = "34";
-		String text3 = "5.5";
-		String text4 = "-35.593933";
-		String text5 = "93593933";
-		System.out.println(Byte.valueOf(text1));
-		System.out.println(Short.valueOf(text2));
-		System.out.println(Integer.valueOf(text2));
-		System.out.println(Float.valueOf(text3));
-		System.out.println(Double.valueOf(text4));
-		System.out.println(Long.valueOf(text5));
+		int javaCertificationMarks = 75;
+		int passMarks = 65;
+		String result = (javaCertificationMarks > passMarks) ? "Passed Java Certification" : "Failed Java Certification";
+		System.out.println("result : " + result);
 	}
 }
