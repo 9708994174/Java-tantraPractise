@@ -1,45 +1,39 @@
-In Java, && represents conditional-and operator (also called logical-and) and || represents conditional-or operator (also called logical-or).
-Their usage is
-(expression1) operator (expression2)
-For example, the expression (isWeekend && isRaining) is read in English as "isWeekend and isRaining"
+In Java, + operator is also used to concatenate strings. For example:
+Expression	Result
+"Ganga" + "River"	"GangaRiver"
+"Ganga" + (2 + 3)	"Ganga5"
+"Ganga" + 2 + 3	"Ganga23"
+2 + 3 + "Ganga"	"5Ganga"
+2.3f + "Ganga"	"2.3Ganga"
+"Ganga" + 'R' + 3 + true	"GangaR3true"
 
-Similarly, the expression (isTasty || isSweet) is read in English as "isTasty or isSweet"
+Below are the rules involved in String concatenation:
+The + operator is syntactically left-associative, when used in string concatenation or numeric addition
+If one operand in the concatenation expression is of type String, the other operand is also converted to String.
+The result of a String concatenation expression is a reference to a String object containing characters in the left-side operand followed by the characters in the right-side operand.
 
-Both conditional-and operator(&&) and conditional-or operator(||) operators evaluate from left to right.
+According to Java coding conventions, a single space should be provided to the left and right of the + operator.
 
-In case of a &&, if the left expression evaluates to false, it will skip evaluating the expression on the right side of the operator.
-In case of a ||, if the left expression evaluates to true, it will skip evaluating the expression on the right side of the operator.
-
-The result of the expression involving any of the above mentioned conditional operators is always a boolean value (true or false).
-
-According to Java coding conventions, a single space should be provided to the left and right of the operator.
-
-Select all valid statements for the below code:
+Select all the correct statements from the below code.
 int x = 3;
 int y = 4;
-int z = 3;
-if (x > y && y > z) {
-	System.out.println("x > y && y > z is true");
-} else {
-	System.out.println("x > y && y > z is false");
-}
+String text1 = "Ganga";
+String text2 = "River";
+Date today = null;
 
-if (z == x && y > z) {
-	System.out.println("z == x && y > z is true");
-} else {
-	System.out.println("z == x && y > z is false");
-}
+String text3 = text1 + text2;
 
-if (x == y || x > z) {
-	System.out.println("x == y || x > z is true");
-} else {
-	System.out.println("x == y || x > z is false");
-}
+String text4 = text1 + x + text2 + y;
 
+String text5 = x + y + text2;
+
+String text6 = text1 + (text2 + (x + y));
+
+String text7 = text1 + '-' + today;
 
 
 Answer 
 
-z == x && y > z is true is printed
 
-x == y || x > z is false is printed
+
+Value of text3 = "GangaRiver"

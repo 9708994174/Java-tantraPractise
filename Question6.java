@@ -1,23 +1,28 @@
-There is yet another conditional operator called the ternary operator ?:. Its usage is
-condition ? expression1 : expression2
-The condition should always evaluate to a boolean. If the condition evaluates to true, expression1 is evaluated and its value returned, else expression2 is evaluated and its value returned. For example,
-int javaCertificationMarks = 75;
-int passMarks = 65;
-String result = (javaCertificationMarks > passMarks) ? "Passed Java Certification" : "Failed Java Certification"; 
+Java supports the below compound assignment operators
++= -= *= /= %= &= ^= |= <<= >>= >>>=
 
-In the above code, since the condition javaCertificationMarks > passMarks evaluates to true, result is assigned the value "Passed Java Certification"
+Usage:
 
-See and retype the below code to understand how ternary operator is used.
+int x = 3, y = 4, z = 0;
 
-Note: Please don't change the package name.'
+z += x; // is same as writing z = z + x;
+z -= y; // is same as writing z = z - y;Select all the valid statements from the below code.
+int x = 2, y = 4, z = 5, value1 = 0, value2 = 0, value3 = 0;
+
+value1 *= x;
+
+value2 = x += 2 * y;
+
+y *= z;
+
+value3 -= 1;
 
 
-package q10834;
-public class TernaryOperatorsDemo {
-	public static void main(String[] args) {
-		int javaCertificationMarks = 75;
-		int passMarks = 65;
-		String result = (javaCertificationMarks > passMarks) ? "Passed Java Certification" : "Failed Java Certification";
-		System.out.println("result : " + result);
-	}
-}
+
+Answer 
+
+value1 = 0
+
+y *= z; results in y's value being changed to 20
+
+value3 = -1
