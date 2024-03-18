@@ -1,7 +1,17 @@
-Select all the correct statements from the given options.
+Create a class IsWorkingDay with a main method. The method receives one command line argument which is the name of the weekday. If the argument is equal to Sunday or Saturday the program should print Holiday, otherwise it should print Working Day.
 
-Answer 
+For Example:
+Cmd Args : Monday
+Working Day
+Note: Please don't change the package name.
 
-int x = 07_08_09; is a valid usage of Underscore
-int x = 0xA_B;
-int x = 1_____________0;
+package q10845;
+class IsWorkingDay{
+	public static void main(String[] args){
+		if(args[0].equals("Sunday") || args[0].equals("Saturday")){
+			System.out.println("Holiday");
+		}else{
+			System.out.println("Working Day");
+		}
+	}
+}

@@ -1,62 +1,35 @@
-Write a java program to display the default values of all primitive data types.
+Create a class CheckPositiveNegative with a public method checkPositiveNegative that takes two parameters first and second are of type int.
 
-Write a class PrimitiveTypes with main(String[ ] args) method.
-
-Write code to produce the below output:
-byte default value = 0
-short default value = 0
-int default value = 0
-long default value = 0
-boolean default value = false
-double default value = 0.0
-float default value = 0.0
+Follow the given instructions while writing the code
+If both numbers are negative, the program should print negative
+If both numbers are positive, the program should print positive
+If one of the numbers is positive and the other is negative, the program should print mixed
+For example:
+Cmd Args : 1 2
+positive
 
 
 Note: Please don't change the package name.
 
-package q10815;
-class PrimitiveTypes
+package q10924;
 
-{
+public class CheckPositiveNegative{
 	
-	static byte b;
-	
-	static short s;
-	
-	static int i;
-	
-	static long l;
-	
-	static float f;
-	
-	static double d;
-	
-	static char c;
-	
-	static boolean bl;
-	
-	public static void main(String[] args)
-	
-	{
+	public static void checkPositiveNegative(int first, int second){
 		
+		if(first<0 && second<0)
 		
+		System.out.println("negative");
 		
-		System.out.println("byte default value = "+b);
+		else if(first>0 && second>0)
 		
-		System.out.println("short default value = " +s);
+		System.out.println("positive");
 		
-		System.out.println("int default value = "+i);
+		else
 		
-		System.out.println("long default value = "+l);
-		
-		System.out.println("boolean default value = "+bl);
-		
-		System.out.println("double default value = "+d);
-		
-		System.out.println("float default value = "+f);
+		System.out.println("mixed");
 		
 	}
 	
-}
-
 	
+}

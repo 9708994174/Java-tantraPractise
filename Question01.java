@@ -1,20 +1,26 @@
-Java version 7 has added a new feature to improve the readability of Numeric Literals.
-We can include an underscore ('_') in numeric literals to show grouping of digits.
-For example:
-long mySalary = 900_000L;// Which is equal to 900000 (Nine Hundred Thousand)
-long magicNumberInHex = 0xCAFE_BABE; // Want to know more about Magic Number?
+Write a class IsWorkingDay with a main method. The method receives one command line argument which is the name of the weekday.
 
-Note: Underscore is only for programmer's readability, it is completely ignored during computations.
+Write the missing code in the If-else statement such that if the argument passed to the main method is equal to Sunday the program should print Holiday, otherwise it should print Working Day.
 
-Usage rules for underscore:
-Underscore can only be used between two digits.
-Underscore cannot be used at the beginning or ending of a number.
-Underscore cannot be used before a suffix like F (used in float), L (used in Long) or D (used in Double).
-Underscore cannot be used before or between a radix prefix used for binary or octal or hex numbers
+For Example:
+Cmd Args : Sunday
+Holiday
+Note: We use public boolean equals(Object anObject) method to check if two strings have the same value. This method will be explained in more detail in later sections.
 
-Select all the correct answers given bellow'
+Note: Please don't change the package name.
 
 
-Answer 
+package q10844;
+public class IsWorkingDay {
+	public static void main(String[] args) {
+		//Fill in the missing code using if-else statement
+		if (args[0].equals("Sunday")){
+			System.out.println("Holiday");
+		}else{
+			System.out.println("Working Day");
+		}
 
-int mySelf = 0___0___7;
+		
+		
+	}
+}

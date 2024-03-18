@@ -1,27 +1,46 @@
-Read and understand how the below methods work by clicking on each of the links below. Later use them to complete the partial code given below.
-add(BigDecimal augend, MathContext mc)
-subtract(BigDecimal subtrahend, MathContext mc)
-multiply(BigDecimal multiplicand, MathContext mc)
-divide(BigDecimal divisor, MathContext mc)
-Note: Retain the precision as 5. While calculating sum and difference, let it be between x and y. Similarly consider the product of x and y and while calculating the quotient consider x as the dividend and y as the divisor.
+Create a class CountSeniorCitizens with a public method countSeniorCitizens that takes four parameters age1, age2, age3, and age4 are of type int. The program should print the count of numbers which are greater than 60.
 
-Note: Please don't change the package name'
+For Example:
+Cmd Args : 60 61 59 58
+1
+[Hint: You can use multiple if conditions to keep track of the count.]
 
-package q10862;
-import java.math.BigDecimal;
-import java.math.MathContext;
-public class BigDecimalUsage {
-	public static void main(String[] args) {
-		MathContext mathContext = new MathContext(5);
-		BigDecimal x = new BigDecimal("3.145", mathContext);
-		BigDecimal y = new BigDecimal("1.792", mathContext);
-		BigDecimal sum = x.add(y ,mathContext); //fill
-		BigDecimal difference =x.subtract( y,mathContext ) ; //fill
-		BigDecimal product =x.multiply( y,mathContext) ; //fill
-		BigDecimal quotient = x.divide( y,mathContext); //fill
-		System.out.println("sum = " + sum); 
-		System.out.println("difference = " + difference);
-		System.out.println("product = " + product);
-		System.out.println("quotient = " + quotient);
+Note: Make sure to use println and not print method.
+
+Note: Please don't change the package name.
+
+package q10929;
+
+public class CountSeniorCitizens{
+	
+	public static void countSeniorCitizens (int al, int a2, int a3, int a4){
+		
+		int C=0;
+		
+		if(al>60){
+			
+			C++;
+			
+		}
+		
+		if(a2>60){
+			
+			C++;
+			
+		}
+		
+		if(a3>60){
+			
+			C++;
+		}	
+			if(a4>60){
+				
+				C++;
+			}	
+				System.out.println(C);
+				
+			
+			
+	
 	}
 }

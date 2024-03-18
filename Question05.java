@@ -1,18 +1,32 @@
-In Java, the char data type denotes a 16-bit unsigned integer (between 0 and 65535), which represent the Unicode values between '\u0000' and '\uffff' .
+Create a class PrintSum with a public method computeSum that takes two parameters firstNo and secondNo are of type int. The program should print the sum of firstNo and secondNo. If firstNo and secondNo are equal it should double the sum and print the output.
 
-The primitive type char has a corresponding wrapper class called Character. Both char and Character can be used interchangeably. Which means, we can say:
-char gender1 = 'M';
-Character gender2 = gender1;
-A character literal must be wrapped in single quotes and it cannot span multiple lines.
+These are examples for understanding:
+Cmd Args : 23 5
+28
+Cmd Args : 6 6
+24
 
-The fixed value 'M' assigned to gender1 is called character literal.
-The default value of a primitive char is 0, when not initialized. However, the default value of a reference of type Character is null, when not initialized.
 
-Since char is a 16-bit integer type, it can be interchangeably used with int.
-We will learn more about the wrapper class Character later.
 
-Select all the correct statements given below.
 
-Answer 
+Note: Please don't change the package name.
 
-A char literal value can be a number between 0 and 216-1.
+package q10920;
+
+public class PrintSum{
+	
+	public static void computeSum(int firstNo, int secondNo){
+		
+		if(firstNo == secondNo){
+			
+			System.out.println(firstNo+firstNo+secondNo+secondNo);
+		}	
+			else{
+				
+				System.out.println(firstNo+secondNo);
+				
+			}
+			
+			}
+		}
+	

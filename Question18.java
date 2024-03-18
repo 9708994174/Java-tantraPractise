@@ -1,11 +1,10 @@
-Identify the error in the given code and correct it.
+Given:
+String[] elements = { "abc", "xyz", "pqr" };
+String first = (elements.length > 0) ? elements[0] : null;
+What is the result ?
 
-Note: Please don't change the package name.'
 
 
-package q10764;
-public class PrintHello {
-	public static void main(String[] args) {
-		System.out.println("Hello");
-	}
-}
+Answer 
+
+The variable 'first' is set to "abc"

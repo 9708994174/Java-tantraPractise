@@ -1,20 +1,30 @@
-The PrintHello class demonstrates printing text to the console.
+Create a class FindMax with a public method findMax that takes three parameters arg1, arg2, and arg3 are of type int. The program should print the largest of the given numbers.
 
-You will notice that the line, System.out.println("Hello, I am learning Java!"); is responsible for printing the text.
-
-This line is written inside the main method.
-Please note that in Java, String literals (i.e. text) must be enclosed in double quotes.
-In our case you will notice that the String literal Hello, I am learning Java! is enclosed in double quotes.
-
-Click on  to understand basics of printing.
-
-See the code and retype the same code.
-
+For example:
+Cmd Args : 10 20 5
+20
 Note: Please don't change the package name.
 
-package q10761;
-public class PrintHello {
-	public static void main(String[] args) {
-		System.out.println("Hello, I am learning Java!");
-	}
+package q10930;
+
+public class FindMax{
+	
+	public void findMax(int a1, int a2, int a3){
+		
+		if(a1>a2 && a1>a3){
+			
+			System.out.println(a1);
+			
+		}else if(a2>a1 && a2>a3){
+			
+			System.out.println(a2);
+			
+		}else{
+			
+			System.out.println(a3);
+			
+		}
+		
+		}
+	
 }
