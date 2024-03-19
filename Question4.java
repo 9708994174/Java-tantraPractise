@@ -1,39 +1,23 @@
-In Java, + operator is also used to concatenate strings. For example:
-Expression	Result
-"Ganga" + "River"	"GangaRiver"
-"Ganga" + (2 + 3)	"Ganga5"
-"Ganga" + 2 + 3	"Ganga23"
-2 + 3 + "Ganga"	"5Ganga"
-2.3f + "Ganga"	"2.3Ganga"
-"Ganga" + 'R' + 3 + true	"GangaR3true"
+The class MultiDimArrayPrinter prints a multidimensional array of integers.
 
-Below are the rules involved in String concatenation:
-The + operator is syntactically left-associative, when used in string concatenation or numeric addition
-If one operand in the concatenation expression is of type String, the other operand is also converted to String.
-The result of a String concatenation expression is a reference to a String object containing characters in the left-side operand followed by the characters in the right-side operand.
+The code in the main method uses for loops with loop counters to iterate over the multidimensional array int2DArr and print the values.
 
-According to Java coding conventions, a single space should be provided to the left and right of the + operator.
+Understand and retype the code below:
 
-Select all the correct statements from the below code.
-int x = 3;
-int y = 4;
-String text1 = "Ganga";
-String text2 = "River";
-Date today = null;
-
-String text3 = text1 + text2;
-
-String text4 = text1 + x + text2 + y;
-
-String text5 = x + y + text2;
-
-String text6 = text1 + (text2 + (x + y));
-
-String text7 = text1 + '-' + today;
-
-
-Answer 
-
-
-
-Value of text3 = "GangaRiver"
+package q10947;
+public class MultiDimArrayPrinter {
+	public static void main(String[] args) {
+		int[][] int2DArr = {
+							{1},
+							{2, 3},
+							{4, 5, 6},
+							{7, 8, 9, 10}
+						};
+		for (int i = 0; i < int2DArr.length; i++) {
+			for (int j = 0; j < int2DArr[i].length; j++) {
+				System.out.print(int2DArr[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+}
