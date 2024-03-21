@@ -1,62 +1,110 @@
-Write a class AdditionOfMatrix with a public method add which returns the sum of its arguments. If the two arguments are not matrices of the same size, then the method should return null.
+Write code to sort the array elements by using merge sort technique.
 
-Consider the following examples for your understanding:
-Matrix 1:
-Enter number of rows: 2
-Enter number of columns: 2
-Enter 2 numbers separated by space
-Enter row 1: 1 2
-Enter row 2: 3 4
-Matrix 2:
-Enter number of rows: 2
-Enter number of columns: 2
-Enter 2 numbers separated by space
-Enter row 1: 4 5
-Enter row 2: 6 7
-Sum of the two given matrices is:
-5 7
-9 11
-Matrix 1:
-Enter number of rows: 2
-Enter number of columns: 2
-Enter 2 numbers separated by space
-Enter row 1: 1 2
-Enter row 2: 3 4
-Matrix 2:
-Enter number of rows: 2
-Enter number of columns: 3
-Enter 3 numbers separated by space
-Enter row 1: 1 2 3
-Enter row 2: 4 5 6
-Addition of different sized matrices is not possible
+Write a class MyMergeSort with main method.
 
+Click on  to understand the working of merge sort.
 
-package q11053;
-public class AdditionOfMatrix {
-	
-	/**
-	 * Computes the addition of the two given matrices if the sizes of the matrices are the same. 
-	 * Otherwise, returns null.
-	 * 
-	 * @return the resultant matrix, null if addition is not possible 
-	 */
-	public int[][] add(int[][] m1, int[][] m2) {
-		// Write the code
-		
-		
-		int sum[][]=new int[m1.length][m1.length];
-	//	if(m1.length!=m2.length) return null;
-		for(int i=0;i<m1.length;i++ ){
-			for(int j=0;j<m2.length;j++){
-				if(m1[i][j]!=m2[i][j])
-				{
-				sum[i][j]=m1[i][j]+m2[i][j];
-				}else {
-					return null;
-				}
-			}
+package q11043;
+import java.util.Scanner;
+public class MyMergeSort {
+	private int[] array;
+	private int[] tempMergArr;
+	private int length;
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter no of elements in the array: ");
+		int n = s.nextInt();
+		int[] inputArr = new int[n];
+		System.out.print("Enter elements in the array seperated by space: ");
+		for(int i = 0; i < n; i++) {
+			inputArr[i] = s.nextInt();
 		}
-		return  sum;
+		MyMergeSort mms = new MyMergeSort();
+		mms.sort(inputArr);
+		for(int i:inputArr){
+			System.out.print(i);
+			System.out.print(" ");
+		}
+	}
+	public void sort(int inputArr[]) {
+		this.array = inputArr;
+		this.length = inputArr.length;
+		this.tempMergArr = new int[length];
+		doMergeSort(0, length - 1);
+	}
+
+
+
+    //Answer Starts Here
+
+    
+private void doMergeSort(int lowerIndex, int higherIndex) {
+	
+	if(lowerIndex<higherIndex){
+		
+		int middle= lowerIndex +(higherIndex - lowerIndex)/2;
+		
+		doMergeSort(lowerIndex,middle);
+		
+		doMergeSort(middle+1,higherIndex);
+		
+		mergeParts(lowerIndex,middle,higherIndex);
+		
 		
 	}
+}
+private void mergeParts(int lowerIndex, int middle, int higherIndex) {
+	
+	for(int i=lowerIndex;i<=higherIndex;i++){
+		
+		tempMergArr[i]=array[i];
+		
+		
+		
+	}
+	
+	int i = lowerIndex;
+	
+	int j=middle+1;
+	
+	int k=lowerIndex;
+	
+	
+	
+	while(i<=middle && j <=higherIndex){
+		
+		if(tempMergArr[i] <= tempMergArr[j]){
+			//Whhhyaf  zx kmdnfnok dngijsdngk XZCM< jkv xzxmv, jdk
+			array[k]=tempMergArr[i];
+			
+			i++;
+			
+		} else{
+			
+			array[k]=tempMergArr[j];
+			
+			j++;
+			
+		}
+		
+		k++;
+		
+	}
+	
+	while(i<=middle){
+		
+		array[k]=tempMergArr[i];
+		
+		k++;
+		
+		i++;
+		
+		
+		
+	}
+	
+}
+
+//Answer ends Here
+
 }

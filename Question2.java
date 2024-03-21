@@ -1,65 +1,73 @@
-In Java, a multidimensional array is implemented as an array of arrays.
+Insertion sort is one that sorts a set of elements by inserting an element into the existing sorted elements.
 
-A multidimensional array is an array whose components are themselves arrays. Imagine a medical cabinet like this:
+The working procedure for insertion sort is as follows:
+
+Let us consider an array of n elements (i.e., a[n]) to be sorted.
+The first element a[0] in the array is itself trivially sorted.
+The second element a[1] is compared with first element a[0] and it will be inserted either before or after first element, so that first and second elements are sorted.
+The third element a[2] is compared with a[0] and a[1] and it will be inserted into its proper place by checking conditions, so that first three elements are sorted.
+Repeat the same process for n - 1 passes.
+Let us consider an example of array numbers "50 20 40 10 30", and sort the array from lowest number to greatest number using insertion sort.
+
+In each step, elements written in color is compared with elements written in bold. Number of elements in the array are 5, so 4 passes will be required.
+Pass - 1 : 
+( 5020 40 10 30 ) -> ( 20 50 40 10 30 ) // The second element a[1] is compared with the first element a[0] and swaps since 50 > 20, so first 2 elements are sorted.Now, Pass - 2 can compare a[2] with a[0] and a[1].
+Pass - 2 : 
+( 20 5040 10 30 ) -> ( 20 40 50 10 30 ) // Since 40 > 20 and 40 < 50, so 40 is inserted in between 20 and 50.Now, Pass - 3 can compare a[3] with a[0], a[1] and a[2].
+Pass - 3 : 
+( 20 40 5010 30 ) -> ( 10 20 40 50 30 ) // Since 10 < 20, so it is inserted before 20.Now, Pass - 4 can compare a[4] with a[0], a[1], a[2] and a[3].
+Pass - 4 : 
+( 10 20 40 5030  ) -> ( 10 20 30 40 50 ) // Since 30 > 10, 30 > 20 but 30 < 40, so 30 is inserted in between 20 and 40 .After completion of Pass - 4 all the elements of the array are sorted. So, the result is 10 20 30 40 50.
+
+Write a class InsertionSorting with a public method insertionSort. The method receives one parameter array of int type. Write a code to sort the array elements using insertion sort technique.
+
+For example:
+Cmd Args : 10 23 15 8 5
+5
+8
+10
+15
+23
+Note: Make sure to use the println() method and not the print() method.
+
+package q11040;
+
+public class InsertionSorting{
+	
+	public static void insertionSort(int[] array){
+		
+		
+		
+		int size =array.length;
+		
+		for(int i=1;i<size;i++){
+			
+			int key = array[i];
+			
+			int j=i-1;
+			
+			
+			
+			while(j >=0 && key < array[j]){
+				
+				array[j+1]=array[j];
+				
+				--j;
+				
+			}
+			
+			array[j+1]=key;
+			
+		}
+		
+		for(int k=0;k<size;k++){
+			
+			System.out.println(array[k]);
+			
+		}
+		
+	}
+	
+}
 
 
-
-The cabinet has multiple rows of medicines. Each row in the cabinet is an array and the whole cabinet is a multidimensional array.
-
-In Java, the arrays / rows inside a multidimensional array can be of different lengths, like below -
-
-0	1	2	3	4	5	6	7	8	9	➞	Array at index 0
-47	49	42	45	60	66	➞	Array at index 1
-15	16	17	18	19	20	21	22	23	24	25	26	⇾	Array at index 2
-32	10	22	➞	Array at index 3
-
-Each array inside of a multidimensional array can be accessed with an index number as shown in the above figure. The first array is identified with number 0, the second array with 1 and so on.
-
-In Java, we can create a multidimensional array in the following ways:
-SYNTAX 1 : dataType[][] referenceName = new dataType[rowsize][];
-int[][] marksArr = new int[3][]; // this creates an empty multidimensional array with 3 arrays.
-marksArr[0] = new int[10]; //this create an empty array of size 10 and adds to marksArray at index 0
-marksArr[1] = new int[2]; //this create an empty array of size 2 and adds to marksArray at index 1
-marksArr[2] = new int[5]; //this create an empty array of size 5 and adds to marksArray at index 2
- 
-or 
-
-SYNTAX 2 : dataType[][] referenceName = { {value1, value2, value3, .....valuen},
-						 {value1, value2, value3, .....valuep},
- 						....................
-						 {value1, value2, value3, .....valuer}};
-int[][] marksArr = { 
-			{341, 425, 563, 231, 334},
-			{446, 532, 747},
-			{872, 492}
-		};
-
-Note: The data types of all the arrays inside a multidimensional array should be the same.
-
-Select all the options where a valid multidimensional array is
-
-
-
-Answer 
-
-int[][] intArray = new int[2][5];
-int[][] intArray = new int[3][];
-int[] arr1 = new int[5];
-int[] arr2 = new int[6];
-int[] arr3 = new int[8];
-
-
-intArray[0] = arr1;
-intArray[1] = arr2;
-intArray[2] = arr3;
-int[] arr1 = new int[5];
-int[] arr2 = new int[6];
-int[] arr3 = new int[8];
-
-
-int[][] intArray = {arr1, arr2, arr3};
-int[] arr1 = new int[5];
-
-
-int[][] intArray = {arr1, {10,11,12}, {100,150,200}};
-int[][] intArray = {{10,11,12}};

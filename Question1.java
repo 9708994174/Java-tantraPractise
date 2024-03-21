@@ -1,45 +1,85 @@
-In a programming language the data that has to be processed is loaded in memory and held in variables. When we want to process an integer value, we declare an int variable and assign the value to it.
-Suppose we want to write a program that prints the total marks scored by students in a class (say, for a total of 30 students).
-One way of doing it is to declare 30 int variables, which is unwieldy when we think of multiple classes or a school.
+Sorting specifies the way to arrange data in a particular order either in ascending or descending.
 
-In such cases, when we want to store multiple values of the same data type, we use an array data structure.
-A data structure is a particular way of organizing data in a computer so that data can be accessed and modified efficiently.
-An array is a kind of data structure that holds a fixed number of values of a single type, each identified by an array index.
+Bubble sort is an internal sorting technique in which adjacent elements are compared and exchanged if necessary.
 
-For example, an array of size 10 (int[] marksArr = new int[10];) can be visualized as shown below.
-0	1	2	3	4	5	6	7	8	9
+The working procedure for bubble sort is as follows:
 
-Essentially an array can be thought of as a sequence of buckets. The first bucket is identified with number 0, the second bucket with 1 and so on. This number is called the index.
+Let us consider an array of n elements (i.e., a[n]) to be sorted.
+Compare the first two elements in the array i.e., a[0] and a[1], if a[1] is less than a[0] then interchange the two values.
+Next compare a[1] and a[2], if a[2] is less than a[1] then interchange the values.
+Continue this process till the last two elements are compared and interchanged.
+Repeat the above steps for n - 1 passes.
+Let us consider an example of array numbers "50 20 40 10 80", and sort the array from lowest number to greatest number using bubble sort.
 
-An element is stored in a bucket using the bucket's index. For example, if we want to store a value of 341 at the first index, the code is marksArr[0] = 341;.
-Similarly if we want to store a value of 425 in the second bucket, the code will be marksArr[1] = 425; and so on.
-If we want to store a value of 747 in the last bucket, the code will be marksArr[9] = 747;.
+In each step, elements written in bold are being compared. Number of elements in the array are 5, so 4 passes will be required.
+Pass - 1 : 
+( 50 20 40 10 80 ) -> ( 20 50 40 10 80 ) // Compared the first two elements, and swaps since 50 > 20.
+( 20 50 40 10 80 ) -> ( 20 40 50 10 80 ) // Swap since 50 > 40.
+( 20 40 50 10 80 ) -> ( 20 40 10 50 80 ) // Swap since 50 > 10.
+( 20 40 10 50 80 ) -> ( 20 40 10 50 80 ) // Since the elements are already in order (50 < 80), algorithm does not swap them.Total number of elements in the given array are 5, so in Pass - 1 total numbers compared are 4. After completion of Pass - 1 the largest element is moved to the last position of the array.
 
-The length of an array is specified at the time of creating the array.
-While writing code if we want to access the size of an array, we use the length field. For example, marksArr.length gives the value of 10 in our case.
-Similarly in the main method, args.length tells us the size of the String array, which is nothing but the number of arguments passed to the main method.
+Now, Pass - 2 can compare the elements of the array from first position to second last position.
+Pass - 2 : 
+( 20 40 10 50 80 ) -> ( 20 40 10 50 80 ) // Since the elements are already in order (20 < 50), algorithm does not swap them.
+( 20 40 10 50 80 ) -> ( 20 10 40 50 80 ) // Swap since 40 > 10.
+( 20 10 40 5080 ) -> ( 20 10 40 50 80 ) // Since the elements are already in order (40 < 50), algorithm does not swap them.In Pass - 2 total numbers compared are 3. After completion of Pass - 2 the second largest element is moved to the second last position of the array.
 
-An element of an array is retrieved/accessed using its index. For example, the value stored in the first bucket can be printed using the below code:
-System.out.println(marksArr[0]); // remember that array's index starts from 0 and not 1
-In Java, we can create an array in the following two ways:
-SYNTAX 1 : dataType[] referenceName = new dataType[size];
-int[] marksArr = new int[10]; // this creates an empty array of size 10 and initializes all values to 0
-or 
-SYNTAX 2 : dataType[] referenceName = {value1, value2, value3, .....valuen};
-int[] marksArr = { 341, 425, 563, 231, 334, 446, 872, 492, 532, 747};
+Now, Pass - 3 can compare the elements of the array from first position to third last position.
+Pass - 3 : 
+( 20 10 40 50 80 ) -> ( 10 20 40 50 80 ) // Swap since 20 > 10.
+( 10 20 4050 80 ) -> ( 10 20 40 50 80 ) // Since these elements are already in order (20 < 40), algorithm does not swap them.In Pass - 3 total numbers compared are 2. After completion of Pass - 3 the third largest element is moved to the third last position of the array.
 
-Click on  to understand the working of an array.
+Now, Pass - 4 can compare the first and second elements of the array.
+Pass - 4 : 
+( 10 2040 50 80 ) -> ( 10 20 40 50 80 ) // Since these elements are already in order (10 < 20), algorithm does not swap them.In Pass - 4 total numbers compared are 1. After completion of Pass - 4 all the elements of the array are sorted. So, the result is 10 20 40 50 80.
 
-Understand and retype the below code which prints an array of Ramanujan numbers.
+Write code to sort the array elements by using bubble sort technique.
+
+Write a class BubbleSorting with a method bubbleSort(int[] array). The method receives an array of int type.
+
+For example, if the array of elements 11, 15, 12, 10 are passed as arguments to the bubbleSort(..) method, then the output should be:
+10
+11
+12
+15
+Note: Make sure to use the println() method and not the print() method.
 
 
-package q10935;
-public class ArrayDemo {
-	public static void main(String[] args) {
-		int[] ramanujanNumbers = { 1729, 4104, 13832, 20683, 32832 };
-		System.out.println("Printing Ramanujan Numbers: ");
-		for (int i = 0; i < ramanujanNumbers.length; i++) {
-			System.out.println(ramanujanNumbers[i]);
+package q11039;
+
+public class BubbleSorting{
+	
+	public static void bubbleSort(int[] array){
+		
+		int arrsize= array.length;
+		
+		int temp;
+		
+		for(int i=0;i<arrsize-1;i++){
+			
+			for(int j=0;j<arrsize-i-1;j++){
+				
+				if(array[j]>array[j+1]){
+					
+					temp=array[j];
+					
+					array[j]=array[j+1];
+					
+					array[j+1]=temp;
+					
+				}
+				
+			}
+			
 		}
+		
+		for(int k=0;k<arrsize;k++){
+			
+			System.out.println(array[k]);
+			
+		}
+		
 	}
+	
 }
+
