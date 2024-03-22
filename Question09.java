@@ -1,35 +1,36 @@
-Create a class CheckPositiveNegative with a public method checkPositiveNegative that takes two parameters first and second are of type int.
+Write a class SumOfElements with a public method sum that takes one parameter arr of type int[] and returns sum of all positive elements in the arr. The return type of sum should be int.
 
-Follow the given instructions while writing the code
-If both numbers are negative, the program should print negative
-If both numbers are positive, the program should print positive
-If one of the numbers is positive and the other is negative, the program should print mixed
-For example:
-Cmd Args : 1 2
-positive
+Assumptions:
+arr is never null
+arr may contain -ve numbers
+These are examples:
+Cmd Args : -35 -52 -12 -99
+Sum of all positive elements in the array is : 0
+Cmd Args : 36 12 -11 10
+Sum of all positive elements in the array is : 58
 
+package q11057;
 
-Note: Please don't change the package name.
-
-package q10924;
-
-public class CheckPositiveNegative{
+public class SumOfElements {
+	/**
+	 * Compute sum of all +ve elements in the array excluding -ve numbers
+	 * 
+	 * 
+	 * @return sum
+	 */ 
 	
-	public static void checkPositiveNegative(int first, int second){
-		
-		if(first<0 && second<0)
-		
-		System.out.println("negative");
-		
-		else if(first>0 && second>0)
-		
-		System.out.println("positive");
-		
-		else
-		
-		System.out.println("mixed");
-		
+		public int sum(int[] arr) {
+			
+			//Write your code here
+			int sum=0;
+			for(int i=0;i<arr.length;i++){
+				if(arr[i]>=0){
+					
+				
+				sum+=arr[i];
+				}
+			}
+			return sum;
+	
 	}
-	
-	
 }

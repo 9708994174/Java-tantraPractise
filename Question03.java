@@ -1,31 +1,41 @@
-Create a class SameNumbers with a public method checkNumbers that takes two parameters firstNo and secondNo are of type int and returns true if firstNo and secondNo are equal. The return type of checkNumbers should be boolean.
 
-For example:
-Cmd Args : 10 10
+L21
+Arrays - Problem Solving - 1
+Q. No : 11048
+Problem solving with Array 
+Write a class ElementCheck with a public method checkFirstOrLast that takes two parameters one is arr of type int[] and second one is arg of type int and returns true if the arg is first or last element in the arr else returns false. The return type of checkFirstOrLast is boolean.
+
+Assumption:
+arr is never null
+Here is an example:
+Enter no of elements in the array: 4
+Enter elements in the array seperated by space:1 2 3 6
+Enter the search element:6
 true
-Cmd Args : 2 3
-false
-Note: Please don't change the package name.
 
-package q10864;
+package q11048;
 
-public class SameNumbers {
-	/**
-	 * Check if the two numbers are equal or not
-	 * 
-	 * 
-	 * 
-	 * @return result
-	 */
-	 
-	 
-	public boolean checkNumbers(int a, int b) {
-		//Write your code here
-		if(a==b){
-			return true;
-		}else{
-			return false;
-		}
+public class ElementCheck {
+
+/** write a logic to check whether the given element is present in the first or last in the array 
+ * 
+ * 
+ * 
+ *@return true if the element present if not return false
+ * 
+ */
+ 	public boolean checkFirstOrLast(int[] arr, int arg) {
+		//Write your code
+	
+			if(arr[0]==arg){
+			return true;	
+			}else{
+				if(arr[arr.length-1]==arg){
+					return true;
+				}else{
+					return false;
+				}
+			}
 		
 	}
 }

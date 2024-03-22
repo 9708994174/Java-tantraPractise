@@ -1,50 +1,37 @@
-Click on  to understand how to write code which can perform basic counting.
+Write a class FindMiddle with a public method findMiddle that takes one parameter arr of type int[] and print the middle element in the arr
 
-Below program has a class CountDemo with a main method. The method receives four integer values as command line arguments. These four integers represent the marks in Maths, Science, Social and English.
+Assumptions:
+arr is never null
+arr length is even it should print the middle two numbers
+arr length is odd it prints the middle element
+Here are examples for your understanding:
+Cmd Args : 1 6 3 5 4
+3
+Cmd Args : 3 2 1 6 5 4
+1
+6
 
-Fill the missing code inside the main method such that the program should print the passCount. The passCount should reflect the count of subjects in which the marks scored is greater than or equal to 50.
+package q11061;
 
-For example:
-Cmd Args : 75 55 65 23
-passCount = 3
-
-
-Note: Please don't change the package name.
-
-package q10928;
-public class CountDemo {
-	
-	static final int PASS_MARK = 50;
-	
-	public static void main(String[] args) {
+public class FindMiddle {
+	/**
+	 * Find the middle element in the given array
+	 * 
+	 * 
+	 * 
+	 * @ return element
+	 */ 
+	public void findMiddle(int[] arr) {
 		
-		int maths =Integer.parseInt(args[0]);
+		//Write your code here
+		int left=0;
+		int right=arr.length;
+		int mid =(right+left)/2;
+	if(right%2==0)
+		System.out.println(arr[right/2-1]+"\n"+ arr[right/2]);
+		else
+		System.out.println(arr[right/2]);
 		
-		int sci= Integer.parseInt(args[1]);
 		
-		int s = Integer.parseInt (args[2]);
-		
-		int e = Integer.parseInt(args[3]);
-		
-		int p = 0;
-		
-		if(maths>=50){
-			p++;
-		}
-		
-		if(sci>=50){
-		p++;
-		}	
-			if(s>=50){
-			p++;	
-			}
-			
-			if(e>=50){
-			p++	;
-			}
-			
-			System.out.println("passCount = " + p);
-			
-	
-	}
+}
 }

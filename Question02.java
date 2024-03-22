@@ -1,17 +1,31 @@
-Create a class IsWorkingDay with a main method. The method receives one command line argument which is the name of the weekday. If the argument is equal to Sunday or Saturday the program should print Holiday, otherwise it should print Working Day.
+Write a class ReversePrint with a public method reversePrint that takes one parameter arr of type int[] and returns the elements of arr in reverse order. The return type of ReversePrint should be int.
 
-For Example:
-Cmd Args : Monday
-Working Day
-Note: Please don't change the package name.
+Assumptions:
+arr is never null
+Here is an example:
+Cmd Args : 32 56 85 1
+Array in reverse order is : 
+1
+85
+56
+32
 
-package q10845;
-class IsWorkingDay{
-	public static void main(String[] args){
-		if(args[0].equals("Sunday") || args[0].equals("Saturday")){
-			System.out.println("Holiday");
-		}else{
-			System.out.println("Working Day");
-		}
-	}
+package q11047;
+public class ReversePrint {
+	/**
+	 * write a logic to find the array of elements in reverse order.
+	 * 
+	 * 
+	 * @return the reverseArray 
+	 */
+	 
+	 public int[] reversePrint(int[] arr) {
+	 	//Wrtie code here
+	 	int j=arr.length,ans[]=new int [arr.length];
+	 	for(int i=0;i<arr.length;i++){
+	 		ans[j-1]=arr[i];
+	 		j--;
+	 	}
+	 	return ans;
+	 }
 }

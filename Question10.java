@@ -1,37 +1,26 @@
-Create a class CheckMultipleOf with a public method checkMultipleOf that takes two parameters first and second are of type int and returns true if first is multiple of second. The return type of checkMultipleOf is boolean.
+Write a class SwapFirstAndLast with a public method swap that takes one parameter arr of type int[]. Write a code to swap the first and last elements of the array and print all the elements of the array.
 
-Here is an example:
-Cmd Args : 18 9
-true
-Hint: Use the % (modulus) operator. It can be used to find the remainder after division by a number.
-For example, to check if a given number is even we write
-if (number % 2 == 0) {// when divided by 2, if the reminder is zero, it is a even number
-	System.out.println("number is even");
-}
+For example:
+Cmd Args : 1 5 6 7 8
+8
+5
+6
+7
+1
 
 
-Note: Please don't change the package name.
-'
-package q10925;
-
-public class CheckMultipleOf{
-	
-	public boolean checkMultipleOf(int f ,int s){
-		
-		if(f%s==0){
-			
-			return true;
-			
+package q11058;
+public class SwapFirstAndLast{
+	public void swap(int[] a){
+		int f=a[0];
+		int l=a[a.length-1];
+		int temp=f;
+		f=l;
+		l=temp;
+		System.out.println(f);
+		for(int i=1;i<a.length-1;i++){
+			System.out.println(a[i]);
 		}
-		
-		else{
-			
-			return false;
-			
-		}
-		
+		System.out.println(l);
 	}
-	
-	
-	
 }

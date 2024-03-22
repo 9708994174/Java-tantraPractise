@@ -1,33 +1,33 @@
-Create a class PrintWorkingHour with a public method checkWorkingHour that takes one parameter hour of type int.
+Write a class ElementCheck with a public method elementFinder that takes one parameter arr of type int[] and return true if the first and last elements of the arr are same else return false. The return type of elementFinder should be boolean.
 
-If the hour is in between 9 and 17 (both inclusive) the program should print Working hour, otherwise it should print Non-working hour.
+Assumptions:
+arr is never null
+Here are examples for your understanding:
+Cmd Args : 33 25 12 5 33
+true
+Cmd Args : 1 2 3 4
+false
 
-For Example:
-Cmd Args : 14
-Working hour
-Note: Please don't change the package name.
+package q11055;
 
-
-package q10922;
-
-public class PrintWorkingHour {
+public class ElementCheck {
 	
-	public void checkWorkingHour(int hour) {
+/**
+ * Find first and last elements of the array are same are not
+ * 
+ * @return true if both are same else return false
+ */
+ 
+
+	public boolean elementFinder(int[] arr) {
 		
-		//Nrite your code here
-		
-		if(hour>=9 && hour<=17){
-			
-			System.out.println("Working hour");
-			
+		//Write your code here
+		if(arr[0]==arr[arr.length-1]){
+			return true;
 		}else{
-			
-			System.out.println("Non-working hour");
+			return false;
 			
 		}
 		
 	}
-	
-	
-	
 }

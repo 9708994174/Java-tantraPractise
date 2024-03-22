@@ -1,46 +1,41 @@
-Create a class CountSeniorCitizens with a public method countSeniorCitizens that takes four parameters age1, age2, age3, and age4 are of type int. The program should print the count of numbers which are greater than 60.
+Write a class SequenceCount with a public method sequenceCount that takes one parameter arr of type int[] and returns the sequence count 1,1 in the arr. The return type of sequenceCount should be int.
 
-For Example:
-Cmd Args : 60 61 59 58
-1
-[Hint: You can use multiple if conditions to keep track of the count.]
+Assumptions:
+arr is never null
+Overlapping of counting is allowed
+Here is an example:
+Enter no of elements in the array:
+7
+Enter elements in the array seperated by space:
+1 -1 1 1 1 2 3 1
+2
 
-Note: Make sure to use println and not print method.
+package q11062;
 
-Note: Please don't change the package name.
-
-package q10929;
-
-public class CountSeniorCitizens{
-	
-	public static void countSeniorCitizens (int al, int a2, int a3, int a4){
+public class SequenceCount {
+	/**
+	 * Find the sequence count 1,1 int given array
+	 * 
+	 * 
+	 * @return count
+	 */
+	 
+	public int sequenceCount(int[] a) {
 		
-		int C=0;
-		
-		if(al>60){
-			
-			C++;
-			
+		//Write your code here
+		int count=0;
+		//if(a.length==1){
+		//	if(a[0]==1){
+		//		count=1;
+		//		return 1;
+		//	}
+	//	}
+		for(int i=0;i<a.length-1;i++){
+			if(a[i]==1 && a[i+1]==1 ){
+				count++;
+			}
 		}
+		return count;
 		
-		if(a2>60){
-			
-			C++;
-			
-		}
-		
-		if(a3>60){
-			
-			C++;
-		}	
-			if(a4>60){
-				
-				C++;
-			}	
-				System.out.println(C);
-				
-			
-			
-	
 	}
 }

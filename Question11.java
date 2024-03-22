@@ -1,28 +1,37 @@
-Create a class AgeCheck with a public method checkAge that takes two parameters age1 and age2 are of type int. The program should print Discount Price if the age1 is less than 10 and age2 is greater than 60, otherwise it should print Full Price.
+Write a class SequenceCheck with a public method sequenceCheck that takes one parameter arr of type int[] and returns true if 6, 9, 12 present consecutively in the arr. The return type of sequenceCheck should be boolean.
 
-For Example:
-Cmd Args : 3 62
-Discount Price
-Note: Make sure to use println and not print method.
+Assumptions:
+arr is never null
+Elements 6, 9, 12 are appear consecutiviely
+Here are examples:
+Cmd Args : 62 32 6 9 12
+true
+Cmd Args : 99 36 6 12 56 9
+false
 
-Note: Please don't change the package name.
+package q11059;
 
-package q10926;
-
-public class AgeCheck{
+public class SequenceCheck {
+	/**
+	 * Find the given elements present consecutively in the array or not
+	 * 
+	 * 
+	 * @return result
+	 */ 
 	
-	public static void checkAge(int al ,int a2){
+	public boolean sequenceCheck(int[] arr) {
+		boolean result=false;
 		
-		if(al <10 && a2>60){
-			
-			System.out.println("Discount Price");
-			
-			}else{
-				
-				System.out.println("Full Price");
-				
-			}
-			
+		//Write your code here
+		for (int i=0;i<arr.length-1;i++){
+			if(arr[i]==6){
+				if(arr[i+1]==9 && arr[i+2]==12){
+					result =true;
+				}else{
+					return false;
+				}
 			}
 		}
-	
+		return result;
+	}
+}

@@ -1,32 +1,19 @@
-Create a class PrintSum with a public method computeSum that takes two parameters firstNo and secondNo are of type int. The program should print the sum of firstNo and secondNo. If firstNo and secondNo are equal it should double the sum and print the output.
-
-These are examples for understanding:
-Cmd Args : 23 5
-28
-Cmd Args : 6 6
-24
-
-
-
-
-Note: Please don't change the package name.
-
-package q10920;
-
-public class PrintSum{
-	
-	public static void computeSum(int firstNo, int secondNo){
-		
-		if(firstNo == secondNo){
-			
-			System.out.println(firstNo+firstNo+secondNo+secondNo);
-		}	
-			else{
-				
-				System.out.println(firstNo+secondNo);
-				
-			}
-			
-			}
+package q11050;
+public class ElementCheck {
+	/**
+	 * check if first or last elements of the arr1 and arr2 are same or not
+	 * 
+	 * 
+	 * @return result
+	 */
+	 
+	public boolean checkFirstOrLast(int[] arr1, int[] arr2) {
+		//Write your code here
+		if(arr1[0]==arr2[0] || arr1[arr1.length-1]==arr2[arr2.length-1]){
+			return true;
+		}else{
+			return false;
 		}
-	
+	}
+}
+

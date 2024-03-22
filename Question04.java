@@ -1,42 +1,25 @@
-Create a class PrintBiggerNumber with a public method checkNumbers that takes two parameters firstNo and secondNo are of type int and returns true if firstNo is greater than secondNo. The return type of checkNumbers should be boolean.
+write a class ElementCount with a main method which passes an arr of type int[] and an element of type int. Print number of times the element is present in the arr.
 
-These are examples for understanding:
-Cmd Args : 65 32
-true
-Cmd Args : 4 100
-false
+Here is an example:
+int[] arr = {1, 12, 9, 3, 5, 3, 78, 4, 3, 9, 18, 56, 1, 5}
+Cmd Args : 1
+2
 
 
-Note: Please don't change the package name.
+Note: Please don't change the package name.'
 
-package q10865;
-
-public class PrintBiggerNumber {
-	/**
-	 * Compare if firstNo is greater than secondNo are not
-	 * 
-	 * 
-	 * @return result
-	 * 
-	 */ 
-	
-	public boolean checkNumbers(int firstNo, int secondNo) {
-		
-		//Write your code here
-		//write your code here
-		
-		if(firstNo >secondNo){
-			
-			return true;
-		}	
-			else{
-				
-				return false;
-				
+package q11049;
+public class ElementCount {
+	public static void main(String[] args) {
+		int[] arr = {1, 12, 9, 3, 5, 3, 78, 4, 3, 9, 18, 56, 1, 5};
+		int element = Integer.parseInt(args[0]);
+		int cnt=0;
+		for(int i=0;i<arr.length;i++){
+			if(element==arr[i]){
+				cnt++;
 			}
-			
-			
-		
+		}
+	System.out.println(cnt);
 		
 	}
 }

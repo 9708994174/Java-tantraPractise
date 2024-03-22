@@ -1,35 +1,48 @@
-Create a class PrintDiff with a public method computeDiff that takes two parameters firstNo and secondNo are of type int.
+Write a class ElementCheck with a public method elementFinder that takes two parameters one is arr of type int[] second one is element of type int that returns true if the element present in the arr only one time.
 
-Calculate the difference between firstNo and secondNo. If the value of the difference is in between -25 and 25, the program should double the value and print the output, otherwise it should print the difference as it is.
+Assumptions:
+arr is never null
+These are examples for your understanding:
+Enter no of elements in the array:
+5
+Enter elements in the array seperated by space:
+9 5 12 35 6
+Enter the search element:
+5
+true
+Enter no of elements in the array:
+4
+Enter elements in the array seperated by space:
+1 2 2 3
+Enter the search element:
+2
+false
 
-For example:
-Cmd Args : 15 7
-16
+package q11054;
 
-
-Note: Please don't change the package name.
-
-package q10921;
-
-public class PrintDiff {
+public class ElementCheck {
+	/**
+	 * Compute if the given elemetn is present in the array only one time
+	 * 
+	 * 
+	 * @return true if it is present else return false
+	 */
 	
-	public void computeDiff(int firstNo, int secondNo) {
+	public boolean elementFinder(int[] arr, int element) {
 		
-		int diff = firstNo -secondNo;
-		
-		if(diff>-25 && diff<25){
-			
-			System.out.println(diff+diff);
-			
-		}	
-			
-			else{
-				
-				System.out.println(diff);
-				
+		//Write your code here
+	int	count=0;
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]==element){
+				count++;
+				//break;
 			}
-			
 		}
+	if(count==1){
+		return true;
+	}else{
+		return false;
+	}
 		
-	
+	}
 }

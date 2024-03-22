@@ -1,26 +1,42 @@
-Create a class CheckSum100 with a public method checkSum that takes two parameters first and second are of type int. If one of the numbers is 100 or the sum of the numbers is 100 the program should print true, otherwise it should print false.
+Write a class ElementCheck with a public method elementFinder that takes one parameter arr of type int[] and returns true if the first four elements in the arr contains number 4 else returns false.
 
-For example:
-Cmd Args : 15 100
+Assumptions:
+arr is never null
+Length of arr may be less than four
+These are examples for understanding,
+Cmd Args : 36 51 42 4
 true
-Note: Make sure to use println and not print method.
+Cmd Args : 1 2
+false
 
-Note: Please don't change the package name.
 
-package q10923;
+package q11056;
 
-public class CheckSum100{
+public class ElementCheck {
 	
-	public static void checkSum( int first ,int second){
+	/**
+	 * Find if the first four elements in the array contains number 4 or not
+	 * 
+	 * 
+	 * @return result
+	 */
+	 
+	public boolean elementFinder(int[] arr) {
 		
-		if(first==100 || second==100 || first+second==100){
+		//Write your code here
+		boolean flag=false;
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]!=4 || arr.length>4){
+				flag= false;
+			}else{
+				return true;
+			}
+		
+		}	
 			
-			System.out.println("true");
+	return flag;
 			
-		}else{
-			
-			System.out.println("false");
-			
-		}
-		}
-	}
+	
+
+}
+}
