@@ -1,48 +1,46 @@
-Write a class ElementCheck with a public method elementFinder that takes two parameters one is arr of type int[] second one is element of type int that returns true if the element present in the arr only one time.
+Write a class MultiplesInArray with a public method findMultiples that takes three parameters arr of type int[] and other two are m1 and m2 are of type int. Print all the elements in the array, but if any element in the array is a multiple of m1, print multiple of (actual value of m1 should be printed instead of ). If it is a multiple of m2, print multiple of . If it is a multiple of both m1 and m2, print multiple of m1 and m2.
 
-Assumptions:
-arr is never null
-These are examples for your understanding:
+For example:
 Enter no of elements in the array:
-5
-Enter elements in the array seperated by space:
-9 5 12 35 6
-Enter the search element:
-5
-true
-Enter no of elements in the array:
-4
-Enter elements in the array seperated by space:
-1 2 2 3
-Enter the search element:
+6
+Enter elements in the array separated by space:
+1 2 34 5 6 7
+Enter the first multiple element:
 2
-false
+Enter the second multiple element:
+3
+1
+2 is multiple of 2
+34 is multiple of 2
+5
+6 is multiple of 2 and 3
+7
 
-package q11054;
 
-public class ElementCheck {
-	/**
-	 * Compute if the given elemetn is present in the array only one time
-	 * 
-	 * 
-	 * @return true if it is present else return false
-	 */
+package q11091;
+public class MultiplesInArray {
 	
-	public boolean elementFinder(int[] arr, int element) {
+	public void findMultiples(int[] arr, int m1, int m2) {
 		
-		//Write your code here
-	int	count=0;
-		for(int i=0;i<arr.length;i++){
-			if(arr[i]==element){
-				count++;
-				//break;
+		for(int i=0; i<arr.length; i++){
+			
+			if(arr[i]%m1==0 && arr[i]%m2==0) {
+				
+				System.out.println(arr[i] + " is multiple of " + m1 + " and "+ m2);
 			}
-		}
-	if(count==1){
-		return true;
-	}else{
-		return false;
-	}
+				else if(arr[i]%m2==0){
+					
+					System.out.println(arr[i] +" is multiple of " + m2);
+				}
+					else if (arr[i]%m1==0){
+						
+						System.out.println(arr[i]+" is multiple of " + m1);
+					}
+						else
+						
+						System.out.println(arr[i]);
+					
 		
+		}
 	}
 }

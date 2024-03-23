@@ -1,67 +1,45 @@
-Write a class SequenceCheck with a public method sequenceCheck that takes one parameter arr of type int[] and returns true if the elements 1,2,3 are present in the arr.The returen type of sequenceCheck should be boolean.
+Write a class SequenceCheck with a public method checkSequence that takes one parameter arr of type int[] and returns true if any three consecutive elements in arr are in incremental order.
 
 Assumptions:
 arr is never null
-The elements need not be in consecutive order
-Here are examples:
-Cmd Args : 1 6 3 2
+Here is an example:
+Enter no of elements in the array:
+6
+Enter elements in the array seperated by space:
+1 2 3 7 4 6
 true
-Cmd Args : 3 6 4 7 8
-false
 
-package q11060;
+package q11097;
 
 public class SequenceCheck {
 	/**
-	 * check if the given array contains the elements 1,2,3 
+	 * Find three consecutive elements in the array are in incremental order or not
 	 * 
 	 * 
 	 * 
-	 * @return true if contain else return false
+	 * @return result
 	 */
-	public static boolean isSorted(int[] a)
 	
-	{
+	public boolean checkSequence(int[] arr) {
+		//Write your code here
+		boolean t=false;
 		
-	
-	
-		
-		boolean aa=false,bb=false,cc=false;
-		
-		for (int i = 0; i < a.length ; i++)
-		
-		{
-	//	bool a=false,b=false,c=false;	
-			if (a[i] == 1 ) {
+		for (int i=0; i<arr.length-2; i++){
+			
+			if(arr[i+1]==arr[i]+1 && arr[i+2]==arr[i+1]+1){
 				
-				aa=true;
+				return true;
 				
-			}else if(a[i]==2){
-				bb=true;
-			}else if(a[i]==3){
-				cc=true;
+				
+				
 			}
 			
 		}
 		
-		if(aa && bb && cc){
-			return true;
-		}else
+		return t;
 		
-		return false;
-		
-	}
-	
-			
-
 	
 	
 	
-	public boolean sequenceCheck(int[] arr) {
-		
-		//Write your code here
-		boolean ans=isSorted(arr);
-		return ans;
-		
 	}
 }

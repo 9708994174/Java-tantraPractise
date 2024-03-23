@@ -1,36 +1,62 @@
-Write a class SumOfElements with a public method sum that takes one parameter arr of type int[] and returns sum of all positive elements in the arr. The return type of sum should be int.
+Write a class EitherOfASequence with a public method checkSequences that takes one parameter arr of type int[] and returns true only if one of these two sequences is present in the array: 18, 28 and 33, 36, returns false if none of these sequences are present or both are present. The return type of checkSequences is boolean.
 
 Assumptions:
 arr is never null
-arr may contain -ve numbers
-These are examples:
-Cmd Args : -35 -52 -12 -99
-Sum of all positive elements in the array is : 0
-Cmd Args : 36 12 -11 10
-Sum of all positive elements in the array is : 58
+These are examples for understanding:
+Enter no of elements in the array:
+5
+Enter elements in the array seperated by space:
+18 28 36 4 2
+true
+Enter no of elements in the array:
+6
+Enter elements in the array seperated by space:
+18 28 5 6 33 36
+false
 
-package q11057;
+package q11094;
 
-public class SumOfElements {
+public class EitherOfASequence {
 	/**
-	 * Compute sum of all +ve elements in the array excluding -ve numbers
+	 * Find the given sequences are present in the arry or not 
 	 * 
 	 * 
-	 * @return sum
+	 * 
+	 * @return result
 	 */ 
 	
-		public int sum(int[] arr) {
+	public boolean checkSequences(int[] arr) {
+		//Write your code here
+		int count=0;
+		
+		for (int i=0; i<arr.length; i++){
 			
-			//Write your code here
-			int sum=0;
-			for(int i=0;i<arr.length;i++){
-				if(arr[i]>=0){
-					
+			if(arr[i]==18 && arr[i+1] ==28){
 				
-				sum+=arr[i];
+				for(int j=0; j<arr.length; j++){
+					
+					if(arr[j] == 33 && arr[j+1] == 36){
+						
+						return false;
+						
+					}
 				}
+					
+					return true;
+					
+				}
+				
+				if(arr[i]==33 && arr[i+2]==36){
+					
+					return true;
+					
+				}
+				
 			}
-			return sum;
+		
+			
+			return false;
+			
 	
 	}
 }

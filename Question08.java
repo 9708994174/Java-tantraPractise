@@ -1,42 +1,55 @@
-Write a class ElementCheck with a public method elementFinder that takes one parameter arr of type int[] and returns true if the first four elements in the arr contains number 4 else returns false.
+Write a class FindSumIgnoringSection with a public method findSum that takes three parameters one is arr of type int[] and other two are ignore1 and ignore2 are of type int and returns the sum of all the elements in the array, if the numbers ignore1 and ignore2, both appear in the array, ignore all the elements between them, including these two numbers.
 
 Assumptions:
 arr is never null
-Length of arr may be less than four
-These are examples for understanding,
-Cmd Args : 36 51 42 4
-true
-Cmd Args : 1 2
-false
+arr will not contain duplicate elements
+Here is an example:
+Enter no of elements in the array:
+5
+Enter elements in the array separated by space:
+1 3 6 9 5
+Enter the first element:
+3
+Enter the second element:
+9
+Sum of remaining elements is:
+6
 
-
-package q11056;
-
-public class ElementCheck {
-	
+package q11093;
+public class FindSumIgnoringSection {
 	/**
-	 * Find if the first four elements in the array contains number 4 or not
+	 * Compute the sum of all the elements in the array ignoring the elements between two ignore1 and ignore2 elements
 	 * 
 	 * 
-	 * @return result
-	 */
-	 
-	public boolean elementFinder(int[] arr) {
+	 * @return sum
+	 * 
+	 */ 
+	public int findSum(int[] arr, int ignore1, int ignore2) {
+		int a=0,b=0,sum=0;
 		
-		//Write your code here
-		boolean flag=false;
-		for(int i=0;i<arr.length;i++){
-			if(arr[i]!=4 || arr.length>4){
-				flag= false;
-			}else{
-				return true;
+		for(int i=0; i<arr.length; i++) {
+			
+			if(arr[i] == ignore1){
+				
+				a = i;
+			}	
+				if(arr[i] == ignore2){
+					
+					b = i;
+				}
 			}
-		
-		}	
-			
-	return flag;
-			
+					for(int i=0; i<arr.length; i++){
+						
+						if(i>=a && i<=b){
+							
+							continue;
+						}	
+							else{
+							
+							sum = sum + arr[i];
+				}		
+					}
+							return sum;
 	
-
-}
+	}
 }
