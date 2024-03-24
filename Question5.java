@@ -1,110 +1,29 @@
-Write code to sort the array elements by using merge sort technique.
+According to English dictionary, a class is defined as a set or category of things having some property or attribute in common.
 
-Write a class MyMergeSort with main method.
+For example, we can consider a banana, a mango and an orange to belong to a class called fruit.
 
-Click on  to understand the working of merge sort.
+In an object-oriented programming language like Java, a class acts as a type, a template a blueprint, from which instances of that type can be created.
 
-package q11043;
-import java.util.Scanner;
-public class MyMergeSort {
-	private int[] array;
-	private int[] tempMergArr;
-	private int length;
-	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		System.out.print("Enter no of elements in the array: ");
-		int n = s.nextInt();
-		int[] inputArr = new int[n];
-		System.out.print("Enter elements in the array seperated by space: ");
-		for(int i = 0; i < n; i++) {
-			inputArr[i] = s.nextInt();
-		}
-		MyMergeSort mms = new MyMergeSort();
-		mms.sort(inputArr);
-		for(int i:inputArr){
-			System.out.print(i);
-			System.out.print(" ");
-		}
-	}
-	public void sort(int inputArr[]) {
-		this.array = inputArr;
-		this.length = inputArr.length;
-		this.tempMergArr = new int[length];
-		doMergeSort(0, length - 1);
-	}
-
-
-
-    //Answer Starts Here
-
-    
-private void doMergeSort(int lowerIndex, int higherIndex) {
-	
-	if(lowerIndex<higherIndex){
-		
-		int middle= lowerIndex +(higherIndex - lowerIndex)/2;
-		
-		doMergeSort(lowerIndex,middle);
-		
-		doMergeSort(middle+1,higherIndex);
-		
-		mergeParts(lowerIndex,middle,higherIndex);
-		
-		
-	}
-}
-private void mergeParts(int lowerIndex, int middle, int higherIndex) {
-	
-	for(int i=lowerIndex;i<=higherIndex;i++){
-		
-		tempMergArr[i]=array[i];
-		
-		
-		
-	}
-	
-	int i = lowerIndex;
-	
-	int j=middle+1;
-	
-	int k=lowerIndex;
-	
-	
-	
-	while(i<=middle && j <=higherIndex){
-		
-		if(tempMergArr[i] <= tempMergArr[j]){
-			//Whhhyaf  zx kmdnfnok dngijsdngk XZCM< jkv xzxmv, jdk
-			array[k]=tempMergArr[i];
-			
-			i++;
-			
-		} else{
-			
-			array[k]=tempMergArr[j];
-			
-			j++;
-			
-		}
-		
-		k++;
-		
-	}
-	
-	while(i<=middle){
-		
-		array[k]=tempMergArr[i];
-		
-		k++;
-		
-		i++;
-		
-		
-		
-	}
-	
-}
-
-//Answer ends Here
+Below is the syntax for a simple class called Student:
+public class Student {
 
 }
+The word Student is the name (identifier) of the class.
+The keyword class qualifies/tags this identifier Student as a class.
+The word public is called access modifier, it is used to control access. We will learn more about access modifiers in the ensuing sections.
+A class can contain members such as fields, methods, nested classes, interfaces, instance, static initializers and constructors.
+
+In Java, String is a pre-defined class representing a sequence of characters.
+So when we say :
+String text1 = new String("Ganga");
+String text2 = new String("River");
+we are creating two instances, namely, text1, text2 of type String which hold "Ganga" and "River" character sequences respectively.
+
+Select all the correct statements given below.
+
+Answer 
+
+
+In the statement:
+Integer age = new Integer(25);
+age is an instance of class Integer.

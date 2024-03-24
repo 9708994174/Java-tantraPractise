@@ -1,78 +1,31 @@
-The working procedure for selection sort smallest element method is as follows:
+The object oriented programming evolved to overcome the limitations of procedural programming approach.
 
-Let us consider an array of n elements (i.e., a[n]) to be sorted.
-In the first step, the smallest element in the list is searched. Once the smallest element is found, it is exchanged with the element which is placed at the first position. This completes the first pass.
-In the next step, it searches for the second smallest element in the list and it is interchanged with the element placed at second position. This is done in second pass.
-This process is repeated for n - 1 passes to sort all the elements.
-Let us consider an example of array numbers "80 10 50 20 40", and sort the array from lowest number to greatest number using selection sort smallest element method.
+The fundamental concepts in OOP are:
+Data Abstraction
+Data Encapsulation
+Modularity
+Inheritance
+Polymorphism
+Data abstraction refers to the act of representing essential features without including the background details and explanations.
 
-Pass - 1 : 
-( 80 10 50 20 40 ) -> ( 10 80 50 20 40 ) // First finds the smallest element and it is exchanged with the first position element.After completion of Pass - 1, the smallest element is moved to the starting position of the array.
+Let us consider an example of switch board, you can only press certain switches according to your requirement. What is happening inside, how it is happening, you need not know.
 
-Now, Pass - 2 can find the next smallest element with out considering the first position element.
-Pass - 2 : 
-( 10 80 50 20 40 ) -> ( 10 20 50 80 40 ) // Smallest in 80 50 20 40 is 20 and it is replaced with next first position of the array.After completion of Pass - 2 the second smallest element is moved to the second position of the array.
+This is abstraction, you know only essential things to operate on switch board without knowing the background details of switch board.
 
-Now, Pass - 3 can find the next smallest element with out considering the first two position elements because they are already sorted.
-Pass - 3 : 
-( 10 20 50 80 40 ) -> ( 10 20 40 80 50 ) // Smallest in 50 80 40 is 40 and it is replaced with next position of the array.After completion of Pass - 3 the third smallest element is moved to the third position of the array.
+Data encapsulation is the way of combining both data and functions that operate on the data under a single unit.
 
-Now, Pass - 4 can find the next smallest element with out considering the first three position elements because they are already sorted.
-Pass - 4 : 
-( 10 20 40 80 50 ) -> ( 10 20 40 50 80 ) // Smallest in 80 50 is 50 and it is replaced with next position of the array.After completion of Pass - 4 all the elements of the array are sorted. So, the result is 10 20 40 50 80.
+In this, the data is not accessed to the outside world directly and only through member functions, the data can be accessed.
 
-Write a class SelectionSortingSmallestElement with a public method selectionSortSmallestEle. The method receives one parameter array of type int. Write code to sort the array elements by using selection sort - smallest element method.
+The insulation of data from direct access by the program is called data hiding.
 
-For example:
-Cmd Args : 35 25 45 65
-25
-35
-45
-65
-Note: Make sure to use the println() method and not the print() method.
+Abstraction and encapsulation are complementary concepts, where as abstraction focuses upon the observable behavior of an object and encapsulation focuses upon the implementation that gives rise to this behavior.
 
-package q11042;
+Encapsulation is most often achieved through information hiding, which is the process of hiding all the secrets of an object that do not contribute its essential characteristics, the structure of an object is hidden as well as the implementation of its methods.
 
-public class SelectionSortingSmallestElement{
-	
-	public static void selectionSortSmallestEle(int[] array){
-		
-		int small;
-		
-		int size=array.length;
-		
-		for(int i=0;i<size-1;i++){
-			
-			small=i;
-			
-			for(int j=i+1;j<size;j++){
-				
-				if(array[j]<array[small]){
-					
-					small=j;
-					
-				}
-				
-			}
-			
-			int temp = array[small];
-			
-			array[small]=array[i];
-			
-			array[i]=temp;
-			
-			
-			
-		}
-		
-		for(int k=0;k<size;k++){
-			
-			System.out.println(array[k]);
-			
-		}
-		
-	}
-	
-}
+Select all the correct statements given below.
 
 
+Answer 
+
+Abstraction is representing only essential things without knowing the background details.
+Encapsulation is combining both data and functions.
