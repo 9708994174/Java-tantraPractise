@@ -1,41 +1,58 @@
-Write a class SequenceCount with a public method sequenceCount that takes one parameter arr of type int[] and returns the sequence count 1,1 in the arr. The return type of sequenceCount should be int.
+The toString() is a special method which is used to convert the state information stored in the fields into a String and return it.
 
-Assumptions:
-arr is never null
-Overlapping of counting is allowed
-Here is an example:
-Enter no of elements in the array:
-7
-Enter elements in the array seperated by space:
-1 -1 1 1 1 2 3 1
-2
+Hence a toString() method's return type is String and it does not take any parameters.
 
-package q11062;
+Identify and correct the errors based on the above information provided. Hint: Press Submit to find out the error.'
 
-public class SequenceCount {
-	/**
-	 * Find the sequence count 1,1 int given array
-	 * 
-	 * 
-	 * @return count
-	 */
-	 
-	public int sequenceCount(int[] a) {
-		
-		//Write your code here
-		int count=0;
-		//if(a.length==1){
-		//	if(a[0]==1){
-		//		count=1;
-		//		return 1;
-		//	}
-	//	}
-		for(int i=0;i<a.length-1;i++){
-			if(a[i]==1 && a[i+1]==1 ){
-				count++;
-			}
-		}
-		return count;
-		
+package q11140;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
 	}
 }
+
+

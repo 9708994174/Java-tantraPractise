@@ -1,53 +1,60 @@
-Write a class SequenceOfEvens with a public method checkEvenSequence that takes one parameter arr of type int[] and returns true if three consecutive even numbers are present in the arr. The return type of checkEvenSequence is boolean.
+A setter method will always have void as return type and takes the field's type as an argument into the method.
 
-Assumptions:
-arr is never null
-Here is an example:
-Enter no of elements in the array:
-4
-Enter elements in the array seperated by space:
-2 4 6 5
-true
+void return type indicates that the method does not return a value. It only performs some operation.
 
-package q11095;
+For example :
+public void setName(String name) {
+	this.name = name;
+}'
 
-public class SequenceOfEvens {
-	/**
-	 * Find three consecutive even numbers are present in the array or not
-	 * 
-	 * 
-	 * 
-	 * @return result
-	 */ 
+
+package q11135;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
 	
-	public void checkEvenSequence(int[] arr) {
-		//Write your code here
-	
-int count=0;
-
-for (int i=0; i<arr.length; i++){
-	
-	if(arr[i]%2==0 && arr[i+1]%2==0 &&arr[i+2]%2==0 ){
-		
-		System.out.println("true");
-		
-		count++;
-		
-		break;
-		
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
 	}
 	
-}
-
-if(count==0){
+	public void setId(String id) {
+		this.id = id;
+	}
 	
-	System.out.println("false");
+	public String getId() {
+		return id;
+	}
 	
-}
-
-
-
-
-
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
 	}
 }

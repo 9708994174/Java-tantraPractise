@@ -1,46 +1,26 @@
-Write a class MultiplesInArray with a public method findMultiples that takes three parameters arr of type int[] and other two are m1 and m2 are of type int. Print all the elements in the array, but if any element in the array is a multiple of m1, print multiple of (actual value of m1 should be printed instead of ). If it is a multiple of m2, print multiple of . If it is a multiple of both m1 and m2, print multiple of m1 and m2.
+Whenever on compilation, you see an error saying: xyz cannot be resolved, it means that the compiler is unable to resolve the symbol xyz to a type.
 
-For example:
-Enter no of elements in the array:
-6
-Enter elements in the array separated by space:
-1 2 34 5 6 7
-Enter the first multiple element:
-2
-Enter the second multiple element:
-3
-1
-2 is multiple of 2
-34 is multiple of 2
-5
-6 is multiple of 2 and 3
-7
+On such errors first verify if the symbol xyz is spelt correctly.
+
+Identify the error and correct it.
 
 
-package q11091;
-public class MultiplesInArray {
+package q11130;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
 	
-	public void findMultiples(int[] arr, int m1, int m2) {
-		
-		for(int i=0; i<arr.length; i++){
-			
-			if(arr[i]%m1==0 && arr[i]%m2==0) {
-				
-				System.out.println(arr[i] + " is multiple of " + m1 + " and "+ m2);
-			}
-				else if(arr[i]%m2==0){
-					
-					System.out.println(arr[i] +" is multiple of " + m2);
-				}
-					else if (arr[i]%m1==0){
-						
-						System.out.println(arr[i]+" is multiple of " + m1);
-					}
-						else
-						
-						System.out.println(arr[i]);
-					
-		
-		}
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
 	}
 }
+

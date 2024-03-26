@@ -1,45 +1,35 @@
-Write a class FindCenteredAverage with a public method findCenteredAverage that takes one parameter arr of type int[] and returns the centered average of the elements in the arr
+You will notice that the line public class Student { is indented to the left most column.
 
-Hint: exclude the biggest and smallest numbers from the array and compute the average of the remaining numbers. If there is more than one smallest value excludes only one of those. Similarly for biggest also.
+    At the same time you will also notice that the lines inside the class body are indented by one level.
+    
+    Indenting code is indented to make code easily readable. It helps clearly identify the start and end of independent code blocks, like classes, methods loops etc.
+    
+    One can either place the opening brace ({) in a new line or at the end of the statement, In all our examples we will place them at the end of the statement so that we can see more lines on the screen.
+    
+    The general rules for indentation are as follows:
+    Press the tab key to indent and not space bar.
+    Indent the line which immediately follows the opening brace.
+    Indent the closing brace (}) to match with the beginning of the line which has the opening brace ({).
+    Identify the error and correct it.
+    
+    Hint: Press the Submit button to find the error. Note if the correct operator is used for String concatenation.
 
-Here is an example:
-Enter no of elements in the array:
-9
-Enter elements in the array separated by space:
-1 5 1 1 9 9 1 9 2
-4
 
-
-package q11092;
-public class FindCenteredAverage {
+    package q11131;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
 	
-	public int findCenteredAverage(int[] arr) {
-		
-		int sum = 0, avg=0;
-		
-		for (int t=0; t<arr.length-1; t++){
-			
-			for (int j=0; j<arr.length-t-1; j++){
-				
-				if(arr[j]>arr[j+1]){
-					
-					int tt =arr[j];
-					
-					arr[j] = arr[j+1];
-					
-					arr[j+1] = tt;
-					
-				}
-			}
-		}		
-				for (int i=1; i<arr.length-1; i++){
-					
-					sum = sum + arr[i];
-					
-					avg = sum / (arr.length-2);
-				}		
-					return avg;
-					
-		
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
 	}
 }

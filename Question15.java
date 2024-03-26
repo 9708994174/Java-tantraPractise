@@ -1,34 +1,15 @@
-Write a class InitializeArray with a public method initialize that takes two parameters len and ele are of type int returns an array of length len and set all the elements in the array to ele. Assumptions:
- arr is never null
-Here is an example:
-Enter length of array:
-4
-Enter element in the array:
-3
-The output array is:
-3
-3
-3
-3
+The list of variables/references that are present in the method declaration are called parameters.
 
-package q11063;
+When the method is invoked the actual values passed are called arguments.
 
-public class InitializeArray {
-	/**
-	 * Set all the elemets in the array to given element and set to length of array to given length
-	 * 
-	 * 
-	 * 
-	 * @return arry 
-	 */
-	 
-	public int[] initialize(int len, int ele) {
-		//Write  your code here
-		int a[]= new int [len];
-		for(int i=0;i<len;i++){
-			a[i]=ele;
-		}
-		return a;
-		
-	}
+Select all the correct statements for the below code:
+public int sum(int num1, int num2) { // statement 1
+	return num1 + num2;
 }
+
+int total = sum(2, 3); // statement 2
+
+
+Answers 
+In statement 1, num1 and num2 are called parameters.
+In statement 2, values 2 and 3 are called arguments.

@@ -1,98 +1,38 @@
-Write a class ElementCheckInEveryPair with a public method checkElement that takes two parameters one is arr of type int[] and second one is arg of type int and returns true if every pair of arr contains at least one arg.
+In Java, a method (also called as function) is a named block of code that performs a task.
 
-Assumptions:
-arr is never null
-These are examples for your understanding:
-Enter no of elements in the array:
-6
-Enter elements in the array seperated by space:
-52 2 3 2 65 2
-Enter the search element:
-2
-true
-Enter no of elements in the array:
-6
-Enter elements in the array seperated by space:
-4 5 4 1 1 4
-Enter the search element:
-4
-false
+Like a mathematical function f(x) (read as f of x), in Java, a method (or a function) can act on some input data to produce an output.
 
+The input is not always compulsory, for example we could have a method called void printCurrentTime(), which could internally fetch the System's current time and print the same.
 
-Note: Please don't change the package name.
-Sample Test Cases
-Test Case 1:
-Expected Output:
-Enter·no·of·elements·in·the·array:
-7
-Enter·elements·in·the·array·seperated·by·space:
-1 2 3 2 2 4 2
-Enter·the·search·element:
-2
-true
+Similarly, the output of a function need not always be printed to a console, the function could store the output to a file, or a database or even return the calculated value to be used for further processing.
 
-Test Case 2:
-Expected Output:
-Enter·no·of·elements·in·the·array:
-6
-Enter·elements·in·the·array·seperated·by·space:
-1 2 2 1 1 2
-Enter·the·search·element:
-2
-false
-
-Test Case 3:
-Expected Output:
-Enter·no·of·elements·in·the·array:
-6
-Enter·elements·in·the·array·seperated·by·space:
-52 2 3 2 65 2
-Enter·the·search·element:
-2
-true
-
-Test Case 4:
-Expected Output:
-Enter·no·of·elements·in·the·array:
-6
-Enter·elements·in·the·array·seperated·by·space:
-4 5 4 1 1 4
-Enter·the·search·element:
-4
-false
-
-package q11082;
-
-public class ElementCheckInEveryPair {
-	/**
-	 * Find every pair of array contains atleast one arg
-	 * 
-	 * 
-	 * 
-	 * 
-	 *@return result 
-	 */ 
-	
-	public boolean checkElement(int[] arr, int arg) {
-		//Write your code here
-	
-	
-	boolean t = false;
-	
-	for(int i=0; i<arr.length-1; i++){
-		
-		if(arr[i] == arg || arr[i+1] == arg){
-			
-			t = true;
-		}		
-			else{
-				
-				return false;
-			}
-	}
-				return t;
-
-			
-		
-	}
+There are 5 basic parts to a method:
+Method Name - the name used identify and invoke/execute the method.
+Method Body - contains the code statements which will be executed when the method is called/invoked.
+Method Parameters - [optional] contain the input values which are used by the statements in the method body.
+Method Return Type - indicates what type of value is returned, if the method returns nothing, then void is used as the return type.
+Modifiers - [optional] modifiers constitute one or more keywords that inform how the method can be used. We will learn more about them later.
+Below is an example of a method which has parameters and returns a value:
+public int sum(int num1, int num2) {
+	return num1 + num2;
 }
+sum is the method name.
+the content between opening { and closing } braces constitutes the method body.
+int num1, int num2, which are passed between opening ( and closing ) parentheses are called the method parameters.
+int which is before the method name sum is the return type of the method.
+the keyword public used before the int return type is part of the method modifiers.
+Below is an example of a method which has no parameters and does not return a value:
+public void printHello() {
+	System.out.println("Hello");
+}
+printHello is the method name.
+the content between opening { and closing } braces constitutes the method body.
+since there are no parameters we have empty opening ( and closing ) parentheses.
+since the method does not return any value, we have provided void as the return type for the method.
+the keyword public used before the void return type is part of the method modifiers.
+
+'
+
+Answer   
+
+Method name should always start a lowercase letter.

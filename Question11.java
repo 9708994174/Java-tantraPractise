@@ -1,51 +1,62 @@
-Write a class SymmetricalArrayCheck with a public method checkSymmetry that takes two parameters one is arr of type int[] and second one is n of type int and returns true if the first n numbers are same as the last n numbers in the arr.
+A getter method of a field will always have the field's type as the return type and will not have any argument.
 
-Assumptions:
-arr is never null
-Here is an example:
-Enter no of elements in the array:
-8
-Enter elements in the array seperated by space:
-1 2 3 5 6 1 2 3
-Enter the search number you want to search:
-3
-true
+It does not take any argument since it simply returns the value of the field held by the instance.
 
-package q11096;
+For example :
+public String getName() {
+	return name;
+}
+Using the above information identify the errors in the below code and correct them. Press Submit to spot the errors.
 
-public class SymmetricalArrayCheck {
-	/**
-	 * Find if the first n numbers or equal to the last n numbers or not
-	 * 
-	 * 
-	 * @return result
-	 */ 
+
+'
+package q11136;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
 	
-	public boolean checkSymmetry(int[] arr, int n) {
-		//Write your code here
-		boolean t=false;
-		
-		for (int i=0; i<n; i++){
-			
-			if(arr[i]==arr[arr.length-n+i]){
-				
-				t=true;
-				
-				
-				
-			}else{
-				
-				return false;
-				
-			}
-			
-		}
-		
-		return true;
-		
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
 	}
 	
+	public void setId(String id) {
+		this.id = id;
+	}
 	
-		
+	public String getId() {
+		return id;
+	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
 }

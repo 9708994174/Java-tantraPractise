@@ -1,37 +1,60 @@
-Write a class FindMiddle with a public method findMiddle that takes one parameter arr of type int[] and print the middle element in the arr
+In the below code you will find that wrong parameter types have been provided to the setter methods.
 
-Assumptions:
-arr is never null
-arr length is even it should print the middle two numbers
-arr length is odd it prints the middle element
-Here are examples for your understanding:
-Cmd Args : 1 6 3 5 4
-3
-Cmd Args : 3 2 1 6 5 4
-1
-6
+Use the declared field's type to correct the parameter type of the setter methods.
 
-package q11061;
+Identify the errors and correct them. Hint: Press Submit to view the errors.
 
-public class FindMiddle {
-	/**
-	 * Find the middle element in the given array
-	 * 
-	 * 
-	 * 
-	 * @ return element
-	 */ 
-	public void findMiddle(int[] arr) {
-		
-		//Write your code here
-		int left=0;
-		int right=arr.length;
-		int mid =(right+left)/2;
-	if(right%2==0)
-		System.out.println(arr[right/2-1]+"\n"+ arr[right/2]);
-		else
-		System.out.println(arr[right/2]);
-		
-		
+
+'
+
+package q11138;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	}
 }
-}
+

@@ -1,40 +1,55 @@
-Write a class CheckSurroundedElement with a public method checkElement that takes one parameter arr of type int[] and print all the elements in the arr that are surrounded by left and right elements and not equal to the left and right elements.
+The toString() is a special method because when the object is involved in the string concatenation then the toString() method returns the String representation of that object. Hence a toString() method's return type is String and it does not take any parameters.
 
-Here is an example:
-Enter·no·of·elements·in·the·arr1:
-5
-Enter·elements·in·the·arr1·seperated·by·space:
-1 2 1 1 3
-2
+Identify and correct the errors based on the above information provided. Hint: Press Submit to find out the error.'
 
 
-package q11088;
-
-public class CheckSurroundedElement {
-	/**
-	 * Find the elements in the array surrounded by left and right and not equal to the left and right elements
-	 * 
-	 * 
-	 * 
-	 * @print the result
-	 */ 
+package q11125;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
 	
-	public void checkElement(int[] arr) {
-		//Write your code here
-		int count=0;
-		
-		for (int i=1;i<arr.length; i++) {
-			
-			if(arr[i]!=arr[i-1] && arr[i]!=arr[i+1]){
-				
-				System.out.println(arr[i]);
-				
-				
-				
-				}
-				
-				
-		}
-		
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public int getAge() {
+		return age;
+	}
+	
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+	
+	public char getGender() {
+		return gender;
+	}
+	
+	public String toString() {
+		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
 	}
 }

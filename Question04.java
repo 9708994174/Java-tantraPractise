@@ -1,62 +1,28 @@
-Write a class ReorderArray with a public method reorder that takes one parameter arr of type int[] and returns the arr such that all zeros should come in front of the arr.
+The toString() method like the constructor of a class is part of the class body. It must be written inside a class scope (inside the opening and closing brace of the class).
 
-Assumptions:
-arr is never null
-Here is an example:
-Enter no of elements in the arr:
-8
-Enter elements in the arr seperated by space:
-55 0 21 0 63 0 45 0
-0
-0
-0
-55
-21
-63
-45
+Hint: You can select some code and press ALT + Up key or ALT + Down key to move the selected code up and down. (Note: This works only in Windows and not in MAC and Linux)
 
-package q11089;
+Identify and correct the error.
 
-public class ReorderArray {
-	/**
-	 *Arrange all the zeros should come infront of the array
-	 * 
-	 * 
-	 * 
-	 *@return array
-	 * 
-	 */
-	 
-	public int[] reorder(int[] arr) {
-		//Write your code here
-		int[] a = new int[arr.length];
-		
-		int j=0;
-		
-		for(int i=0; i<arr.length; i++) {
-			
-			if(arr[i] ==0){
-				
-				a[j]=0;
-				
-				j++;
-				
-			}
-		}
-			
-			for (int t=0; t<arr.length; t++){
-				
-				if(arr[t] !=0){
-					
-					a[j] = arr[t];
-					
-					j++;
-					
-				}
-				
-			}
-			
-			return a;
-		
+
+
+package q11128;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String name, String id, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
+
+	
+	public String toString() {
+		return "Student [name = " + name + ", id = " + id + ", age = " + age + ", gender = " + gender + "]";
 	}
 }
