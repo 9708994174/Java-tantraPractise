@@ -1,26 +1,35 @@
-A programming paradigm defines the methodology of designing and implementing programs using the key features and other building blocks of a programming language.
+A constructor is a special method (block of code) which is used to create instances of a class.
 
-A programming paradigm gives you an idea how problems are generally analyzed and solved in a particular programming language.
+A constructor is also used to initialize the fields of a class, which you will notice in the below code.
 
-Below are a few commonly used programming paradigms :
-Procedural Programming
-Object Based Programming
-Object Oriented Programming
-Procedural programming lays more emphasis on procedure than data. C language uses procedural programming style.
+A constructor's name must always be the same as the class name, which in this case is Student.
 
-C++ and Java can also be used as a procedural programming language with some enhanced features such as type checking, reference variables, inline functions, default arguments etc.
+A constructor is a special method which does not have a return type.
 
-Below are a few pros and cons of procedural programming languages:
-Pros
-For smaller programs the code is usually small, more readable and result roriented.
-They are usually very efficient since they are written for a very specific purpose.
-Cons
-Since programs are function based they do not relate to a real life object.
-When large amount of code is written inside functions, it becomes very difficult to maintain or make modifications.
-Changing the way data is stored can required large amount of changes in code, unlike in Object oriented programs, making it difficult to maintain large systems.
-Select all the correct statements given below.
+It is a good practice to provide the arguments in the same order as they are declared in the class, if they happen to be the fields of the class.
 
-Answer 
+In the below code note the usage of this to differentiate the identifiers with same names in different scopes.
 
-A programming paradigm informs how problems are analyzed and solved in a programming language.
-Large systems developed using procedural programming language can be difficult to maintain.
+For example, in the statement this.id = id;, this.id refers to the instance field private String id;, and the id, which is after the assignment operator (=) refers to the String id passed as parameter into the constructor.
+
+See the code and retype the same code.
+
+
+'
+
+
+package q11142;
+public class Student {
+	private String id;
+	private String name;
+	private int age;
+	private char gender;
+	
+	public Student(String id, String name, int age, char gender) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+}
+
