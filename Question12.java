@@ -1,56 +1,42 @@
-In the below you will find that some of the getter and setter methods have wrong return types.
+The String class provides a method public int compareTo(String anotherString) to perform a lexicographical comparison of itself with another string passed to it.
 
-Use the declared type of the field to correct the return types of getter methods and ponder upon what should be the return types of the setter methods to correct them.
+It returns 0 (zero) if the strings are equal.
+It returns a positive number ( > 0 ), when the string appears before the string argument passed.
+It returns a negative number ( < 0 ), when the string appears after the string argument passed.
 
-Identify the errors and correct them. Hint: Press Submit to see the errors.
+For example:
+"Moon".compareTo("Moon") returns 0
+"Earth".compareTo("Moon") returns -8
+"Moon".compareTo("Earth") returns 8
+Write a class StringCompareTo with a main method.
 
-package q11137;
-public class Student {
-	private String id;
-	private String name;
-	private int age;
-	private char gender;
+Assume the main method receives two string arguments. Write code to print the below output by comparing first argument and the second argument.
+arg1 is lesser than arg2 //if first argument lexicographically appears before the second argument
+arg1 is greater than arg2 //if first argument lexicographically appears after the second argument
+arg1 and arg2 are equal//if first argument is equal to the second argument
+
+
+package q11170;
+
+
+public class StringCompareTo {
 	
-	public Student(String id, String name, int age, char gender) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	public String  getId() {
-		return id;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public void setGender(char gender) {
-		this.gender = gender;
-	}
-	
-	public char getGender() {
-		return gender;
-	}
-	
-	public String toString() {
-		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	public static void main(String[] args) {
+		
+		int ans = args[0].compareTo(args[1]);
+		
+		if(ans>0) System.out.println("arg1 is lesser than arg2");
+		
+		else if(ans==0) System.out.println("arg1 and arg2 are equal");
+		
+		else System.out.println("arg1 is greater than arg2");
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

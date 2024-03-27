@@ -1,60 +1,28 @@
-A setter method will always have void as return type and takes the field's type as an argument into the method.
+Write a class StringCompare with a main method. The method receives one command line argument. Print true if the argument ends with the suffix ed, else print false.
 
-void return type indicates that the method does not return a value. It only performs some operation.
-
-For example :
-public void setName(String name) {
-	this.name = name;
-}'
+For Example:
+Cmd Args : prefixed
+true
 
 
-package q11135;
-public class Student {
-	private String id;
-	private String name;
-	private int age;
-	private char gender;
+package q11168;
+
+
+public class StringCompare {
 	
-	public Student(String id, String name, int age, char gender) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public void setGender(char gender) {
-		this.gender = gender;
-	}
-	
-	public char getGender() {
-		return gender;
-	}
-	
-	public String toString() {
-		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
+	public static void main(String[] args) {
+		
+		String str1 = args[0];
+		
+		
+		
+		System.out.println(str1.endsWith("ed"));
+		
+		
+		
+		
+		
+		
 	}
 }
+
