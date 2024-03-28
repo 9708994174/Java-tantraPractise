@@ -1,33 +1,26 @@
-Write a class FindAverage with a public method findAverage that takes one paremeter arr of type int[] and returns the average of elements in the arr.
+Write a class CountChars with a main method. The method receives one command line argument and prints the number of o's (it is not zero, it is the alphabet 'o') present in the argument.
 
-Assumptions:
-arr is never null
-Here is an example:
-Enter no of elements in the arr:
-4
-Enter elements in the arr seperated by space:
-1 2 3 4
-Avg elements of the array is:
+Example:
+Cmd Args : ozone
 2
+Note: Make sure to use println and not print method.
 
-package q11072;
 
-public class FindAverage {
-	/**
-	 * Compute the average of elements in the given array
-	 * 
-	 * 
-	 * @return result
-	 */ 
+package q11214;
+public class CountChars{
 	
-	public int findAverage(int[] arr) {
+	public static void main(String args[]){
 		
-		int ans=0;
-		for(int i=0;i<arr.length;i++){
-			ans+=arr[i];
-		}
-		return ans/arr.length;
+		String vivek =args[0] ;
 		
+		Character searchChar = 'o';
+		
+		long count =vivek.chars().filter(ch -> ch == searchChar).count();
+		
+		 System.out.println(count);
+		 
 	}
 }
+
+
 

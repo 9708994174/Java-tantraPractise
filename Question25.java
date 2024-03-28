@@ -1,39 +1,33 @@
-Write a class FindDuplicate with a public method findDuplicate that takes two parameters one is arr of type int[] and second one is arg of type int and returns true if arg present more than once in the arr. The return type of findDuplicate should be boolean.
+Write a class JavaStringBufferDelete with a main method to delete characters from a string using StringBuffer class.
 
-Assumptions:
-arr is never null
-Here is an example:
-Enter no of elements in the array:
-6
-Enter elements in the array seperated by space:
-999 77 77 88 54 -8
-Enter the element you want to search:
-77
-true
+Follow the given instructions.
+Consider a string "Hello India" and delete 0 to 6 characters in that and print the result.
+Consider another string "Hello World", delete characters from position 0 to length of the entire string and print the result.
+Consider another string "Hello Java", remove 0th character and then print the result.
 
-package q11073;
 
-public class FindDuplicate {
-	/**
-	 * Find the arg element occures in the arr more than once
-	 * 
-	 * 
-	 * @return result
-	 */ 
+
+package q11215;
+
+public class JavaStringBufferDelete{
 	
-	public boolean findDuplicate(int[] arr, int arg) {
-		//Write your code here
-		boolean ans=false;
-		int count=0;
-		for(int i=0;i<arr.length;i++){
-			if(arr[i]==arg){
-		count++;
-			
-			if(count>1){
-			return true;
-			}
-		}
-		}
-		return false;
+	public static void main(String args[]){
+		
+		StringBuffer a=new StringBuffer("Hello India");
+		
+		StringBuffer b=new StringBuffer("Hello World");
+		
+		StringBuffer c=new StringBuffer("Hello Java");
+		
+		
+		
+		 System.out.println(a.delete(0,6));
+		 
+		   System.out.println(b.delete(0,b.length()));
+		   
+		      System.out.println(c.delete(0,1));
+		      
 	}
 }
+
+

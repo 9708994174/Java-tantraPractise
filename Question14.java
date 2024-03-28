@@ -1,58 +1,22 @@
-The toString() is a special method which is used to convert the state information stored in the fields into a String and return it.
+Write a class EndsWith with a main method. The method receives one command line argument. Print true if the argument ends with bad, else print false.
 
-Hence a toString() method's return type is String and it does not take any parameters.
+For Example:
+Cmd Args : Hyderabad
+true
+Note: Make sure to use println and not print method.
 
-Identify and correct the errors based on the above information provided. Hint: Press Submit to find out the error.'
+package q11204;
+public class EndsWith{
+	
+	public static void main(String args[]){
+		
+		String s1=args[0];
+		
+		if(s1.endsWith("bad")) System.out.println("true") ;
+		
+		else System.out.println("false"); 
+		
 
-package q11140;
-public class Student {
-	private String id;
-	private String name;
-	private int age;
-	private char gender;
 	
-	public Student(String id, String name, int age, char gender) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public void setGender(char gender) {
-		this.gender = gender;
-	}
-	
-	public char getGender() {
-		return gender;
-	}
-	
-	public String toString() {
-		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
 	}
 }
-
-

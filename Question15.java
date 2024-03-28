@@ -1,15 +1,24 @@
-The list of variables/references that are present in the method declaration are called parameters.
+Write a class EndsWith with a main method. The method receives two command line arguments. Print true if the first argument ends with the second argument (ignoring case), else print false.
 
-When the method is invoked the actual values passed are called arguments.
+Example:
+Cmd Args : Godavari ri
+true
+[Hint: Since we have to verify ignoring the case, you may want to first convert both either to lower or upper case before comparing.]
 
-Select all the correct statements for the below code:
-public int sum(int num1, int num2) { // statement 1
-	return num1 + num2;
+
+package q11205;
+public class EndsWith {
+	
+	
+	public static void main(String args[]){
+		
+		String s1=args[0].toLowerCase();
+		
+		if(s1.endsWith(args[1].toLowerCase())) System.out.println("true") ;
+		
+		else System.out.println("false");
+		
+		
+	}
 }
 
-int total = sum(2, 3); // statement 2
-
-
-Answers 
-In statement 1, num1 and num2 are called parameters.
-In statement 2, values 2 and 3 are called arguments.

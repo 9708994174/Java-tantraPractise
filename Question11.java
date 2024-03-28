@@ -1,15 +1,27 @@
-Write a class StringCompare with a main the method. The method receives two command line arguments compare the first and second arguments using equals() method and also by using == operator and print the result.
+Write a class PutInsideTag with a main method. The method receives two command line arguments. First one is a tag like '[]' or '{{{}}}' etc. The second argument is a string. Write logic to print a new word where the second argument is kept exactly in the middle of the tag.
 
-For example :
-Cmd Args : Ganga Ganga
-The result with equals : true
-The result with == : false
+For example:
+Cmd Args : {{{{}}}} Hyderabad
+{{{{Hyderabad}}}}
+Note: Make sure to use println and not print method.
 
 
-package q11169;
-public class StringCompare {
+'
+
+package q11201;
+
+
+public class  PutInsideTag{
+	
 	public static void main(String[] args) {
-		System.out.println("The result with equals : " + args[0].equals(args[1]));
-		System.out.println("The result with == : " + (args[0]==args[1]));
+		
+		int mid=args[0].length()/2;
+		
+		String str=args[0].substring(0,mid) + args[1]+args[0].substring(mid,args[0].length());
+		
+		System.out.println(str);
+		
+		
 	}
 }
+

@@ -1,26 +1,21 @@
-Write a class StringCompare witha a main method. The method receives one command line argument. Print true if the argument starts with the prefix pre, otherwise print false.
+Write a class ExtractTag with a main method. The method receives one command line argument in between tags like [ ], extract the argument between the tags and print the output.
 
 For Example:
-Cmd Args : preparation
-true
+Cmd Args : [Independent]
+Independent
 
 
-package q11167;
+package q11199;
 
 
 
-
-public class StringCompare {
+public class  ExtractTag{
 	
 	public static void main(String[] args) {
 		
-		String str1 = args[0];
+		String str=args[0].replace("[","").replace("]","");
 		
-		System.out.println(str1.startsWith("pre"));
-		
-	
-		
-		
+		System.out.println(str);
 		
 		
 	}

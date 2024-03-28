@@ -1,27 +1,18 @@
-Write a class CompareArrays with a public method compareArrays that takes two parameters arr1 and arr2 are of type int[] and returns true if the lengths of arr1 and arr2 are equal.
+Write a class MiddleChar with a main method. The method receives one command line argument. Print the middle character of the argument.
 
-Here is an example:
-Enter lenght of the arr1:
-5
-Enter lenght of the arr2:
-5
-tru
+Assumptions:
+ The length of the string is odd
+Example:
+Cmd Args : Three
+r
+Note: Make sure to use println and not print method.
 
-package q11066;
 
-public class CompareArrays {
-	/**
-	 * Find the length of the two arrays are equal or not
-	 * 
-	 * 
-	 * @return result
-	 */ 
-	
-	
-	
-	public boolean compareArrays(int[] arr1, int[] arr2) {
-		//Write your code here
-	boolean	ans=(arr1.length==arr2.length)?true:false;
-	return ans;
+package q11208;
+public class MiddleChar{
+	public static void main(String args[]){
+		System.out.println(args[0].charAt(args[0].length()/2));
 	}
 }
+
+

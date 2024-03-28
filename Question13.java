@@ -1,60 +1,42 @@
-In the below code you will find that wrong parameter types have been provided to the setter methods.
+Write a class MiddleTwoChars with a main method. The method receives one command line argument extract the middle two characters from the argument and print the output.
 
-Use the declared field's type to correct the parameter type of the setter methods.
+Assumptions:
+ The string has even number of characters
+For example:
+Cmd Args : java
+av
+Note: Make sure to use println and not print method.
 
-Identify the errors and correct them. Hint: Press Submit to view the errors.
-
-
-'
-
-package q11138;
-public class Student {
-	private String id;
-	private String name;
-	private int age;
-	private char gender;
+package q11203;
+public class MiddleTwoChars {
+	public static void main(String[] args){
+		String str=args[0];
+		int position;
+		
+		int length;
+		
+		if (str.length() % 2 == 0)
+		
+		{
+			
+			position = str.length() / 2 - 1;
+			
+			length = 2;
+			
+		}
+		
+		else
+		
+		{
+			
+			position = str.length() / 2;
+			
+			length = 1;
+			
+		}
+		
+		System.out.println(str.substring(position, position + length));
+		
 	
-	public Student(String id, String name, int age, char gender) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public void setGender(char gender) {
-		this.gender = gender;
-	}
-	
-	public char getGender() {
-		return gender;
-	}
-	
-	public String toString() {
-		return "Student [id = " + id + ", name = " + name + ", age = " + age + ", gender = " + gender + "]";
 	}
 }
-

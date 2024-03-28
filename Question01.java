@@ -1,23 +1,27 @@
-The length of a string can be obtained using the method public int length() of the String class.
+Write a class Greeting with a main method. The method receives one command line argument and prints the output as shown below.
 
-For Example:
-"Pentagon".length() returns 8.
-The characters in a string are indexed from 0, just like in an array. The method public char charAt(int index) returns the char value at the specified index. An index ranges from 0 to length() - 1. The first char value of the string is at index 0, the next at index 1, and so on, as for array indexing.
-
-If we want to convert a string to lowercase, we should use public String toLowerCase() method. It returns a new string that has all the characters of the original string in lower case. Similarly, we have a public String toUpperCase() method for converting to upper case.
-
-Click on the  button to see live execution of the above mentioned methods. Make sure to provide your custom text to see the changes.
-
-Retype the code below which demonstrates the usage of the above methods.
+For example:
+Cmd Args : Ram
+Hello Ram!
+Note: Make sure to use println and not print method. If you want to use printf, ensure to print a \n character at the end.
 
 
-package q11151;
-public class StringMethods {
+
+package q11191;
+
+
+public class Greeting{
+	
 	public static void main(String[] args) {
-		String str = "FiveTimesFive";
-		System.out.println("Length : " + str.length());
-		System.out.println("5th character : " + str.charAt(4));
-		System.out.println("Upper case : " + str.toUpperCase());
-		System.out.println("Lower case : " + str.toLowerCase());
+		
+		String ans=args[0];
+		
+		
+		
+		System.out.println("Hello "+ ans +"!");
+		
+		
+		
+		
 	}
 }

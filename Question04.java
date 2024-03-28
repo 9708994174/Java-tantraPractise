@@ -1,28 +1,25 @@
-Create a class TestStringMethods with a main method. The method receives one command line argument. Convert the argument to lowercase and print the output.
+Write a class TestSubstring with a main method. The method receives one command line argument and print the output formed by the first three characters of the argument.
 
-For Example:
-Cmd Args : KRISHNA
-krishna
+For example:
+Cmd Args : Important
+Imp
 
 
-package q11162;
-public class TestStringMethods {
-	
-	
+package q11194;
+
+
+public class  TestSubstring{
 	
 	public static void main(String[] args) {
 		
+		System.out.println(args[0].substring(0,3));
 		
 		
-		String str = args[0];
 		
 		
-		
-		System.out.println(str.toLowerCase());
 		
 		
 		
 		
 	}
 }
-

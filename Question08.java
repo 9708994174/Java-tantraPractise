@@ -1,26 +1,22 @@
-Write a class StringCompare with a main method. The method receives two command line arguments and prints true if both are equal.
+Write a class RemoveChar with a main method. The method receives one command line argument and prints the output by removing the 3rd character from the argument.
 
 Assumptions:
-Ignoring the case of the two arguments
-For Example:
-Cmd Args : Congrats conGrats
-true
+Length of the argument is greater than or equal to 3 characters
+For example:
+Cmd Args : Victory
+Vitory
 
 
-package q11166;
+package q11198;
 
 
-public class StringCompare {
+public class  RemoveChar{
 	
 	public static void main(String[] args) {
 		
-		String str1 = args[0];
+		String str=args[0];
 		
-		String str2 = args[1];
-		
-		System.out.println(str1.equalsIgnoreCase(str2));
-		
-		
+		System.out.println(str.substring(0, 2) + str.substring(2+1));
 		
 		
 	}

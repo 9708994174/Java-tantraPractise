@@ -1,27 +1,26 @@
-Write a class StringCompare with a main method. The method receives two command line arguments and prints true if both are equal.
+Write a class StringStairs with a main method. The method receives one command line argument and prints the first char in one line, then the first two chars in the next line, etc.
 
-For Example:
-Cmd Args : India India
-true
-
-
-
-
-
-
-package q11165;
+For example:
+Cmd Args : Delhi
+D
+De
+Del
+Delh
+Delhi
 
 
-public class StringCompare {
+package q11197;
+
+
+public class  StringStairs{
 	
 	public static void main(String[] args) {
 		
-		String str1 = args[0];
-		
-		String str2 = args[1];
-		
-		System.out.println(str1.equals(str2));
-		
-		
+		for(int i=1;i<=args[0].length();i++){
+			
+			System.out.println(args[0].substring(0,i));
+
+			
+		}
 	}
 }

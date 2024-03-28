@@ -1,51 +1,27 @@
-Write a class ConcatenateArrays with a public method concatenate that takes two parameters arr1 and arr2 are of type int[]. Create a new array that has the elements of both arr1 and arr2 in the same order and print the elements.
+Write a class RemoveSuffix with a main method. The method receives one command line argument. If the argument has the same prefix and suffixes up to 3 characters, remove the suffix and print the argument.
 
 Example:
-Enter no of elements in the arr1:
-3
-Enter elements in the arr1 separated by space:
-1 2 3
-Enter no of elements in the arr2:
-3
-Enter elements in the arr2 separated by space:
-4 5 6
-The resultant array is : 
-1
-2
-3
-4
-5
-6
+Cmd Args : systemsys
+system
 
-package q11070;
-public class ConcatenateArrays {
-	
-	
-	
-	
-	
-	public void concatenate(int[] arr1,int[] arr2) {
-		
-		
-		
-		for(int i=0;i<arr1.length;i++){
-			
-			System.out.println(arr1[i]);
-			
-			
-			
-		}
-		
-		for(int i=0;i<arr2.length;i++){
-			
-			System.out.println(arr2[i]);
-			
-			
-			
-		}
-		
 
-		}
+package q11212;
+public class RemoveSuffix{
+	
+	public static void main(String[] args){
+		
+		int n=args[0].length();
+		
+		if(args[0].substring(0,3).equals(args[0].substring(n-3)))
+		
+		System.out.println(args[0].substring(0,n-3));
+		
+		else System.out.println(args[0]);
+		
+		
+		
+		
 	}
+}
 
 

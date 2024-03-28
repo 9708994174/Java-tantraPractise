@@ -1,61 +1,40 @@
-Write a class ElementDiff with a public method findDiff that takes one parameter arr of type int[] and returns the difference between largest and smallest elements in the arr.
+Write a program in a class RemovePrefix with a main method. The program receives one command line argument.
 
-Assumptions:
-arr is never null
-Here is an example:
-Enter no of elements in the arr:
-5
-Enter elements in the arr seperated by space:
-33 78 95 14 45
-Difference between largest and smallest elements in the array is: 8
+The program should remove the first two characters from the argument and print the output, except in one condition. The program should skip removal of x or y if it encounters them in the first two positions.
 
-package q11071;
+These are some examples for your understanding:
 
-public class ElementDiff {
-	/**
-	 * Compute the difference between large and small elements in the given arry
-	 * 
-	 * 
-	 * @return result
-	 */ 
+Sample Input Output 1
+Cmd Args : xyz
+xyz
+Sample Input Output 2
+Cmd Args : abTree
+Tree
+Sample Input Output 3
+Cmd Args : ayFlower
+yFlower
+Note: Make sure to use println and not print method.
+
+
+package q11213;
+public class RemovePrefix {
 	
-	public int findDiff(int[] a) {
+	public static void main(String[] args) {
 		
-		//Write your code here
-		int max,min;
+		if((args[0].charAt(0)=='x' && args[0].charAt(1)=='y') || (args[0].charAt(0)=='y' && args[0].charAt(1)=='x'))
 		
-		int n=a.length;
+		System.out.println(args[0]);
 		
-		max=a[0];
+		else if(args[0].charAt(1)== 'x' || args[0].charAt(1)=='y')
 		
-		for(int i=0;i< n;i++){
-			
-			if(a[i]>max)
-			
-			{
-				
-				max=a[i];
-				
-			}
-			
-		}
+		System.out.println(args[0].substring(1));
 		
-		//find minimum
+		else if(args[0].charAt(0)=='y' || args[0].charAt(0)=='x')
 		
-		min=a[0];
+		System.out.println(args[0].substring(0,1) +args[0].substring(2));
 		
-		for(int i=0;i< n;i++){
-			
-			if(a[i]< min)
-			
-			{
-				
-				min=a[i];
-				
-			}
-			
-		}
-	return (max-min);
-	
-		}
+		else System.out.println(args[0].substring(2));
 	}
+}
+
+
