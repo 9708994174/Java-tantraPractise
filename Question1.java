@@ -1,35 +1,42 @@
-A constructor is a special method (block of code) which is used to create instances of a class.
+Inheritance is a way by which a class can inherit what is already there in another existing class.
 
-A constructor is also used to initialize the fields of a class, which you will notice in the below code.
+We can classify inheritance into two kinds:
+Implementation Inheritance (or code inheritance)
+Interface Inheritance (or inheritance of behaviour or contract)
+Here we will understand implementation inheritance and later learn about interface inheritance after we learn interfaces.
 
-A constructor's name must always be the same as the class name, which in this case is Student.
+In Java, a class can inherit implementation from only one class, it is also referred as single-inheritance. (Other languages like c++ support multiple inheritance of implementation)
 
-A constructor is a special method which does not have a return type.
-
-It is a good practice to provide the arguments in the same order as they are declared in the class, if they happen to be the fields of the class.
-
-In the below code note the usage of this to differentiate the identifiers with same names in different scopes.
-
-For example, in the statement this.id = id;, this.id refers to the instance field private String id;, and the id, which is after the assignment operator (=) refers to the String id passed as parameter into the constructor.
-
-See the code and retype the same code.
-
-
-'
-
-
-package q11142;
-public class Student {
-	private String id;
-	private String name;
-	private int age;
-	private char gender;
-	
-	public Student(String id, String name, int age, char gender) {
-		this.id = id;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-	}
+In Java, we use extends keyword when we want a class to inherit (extend) from another class. For example:
+class A {	
+	...
 }
+class B extends A {
+	...
+}
+In the above code B extends A. B is called the subclass of A. A is called the super class of B.
+
+Note: Every class in Java automatically extends the root class Object if it does not explicitly extends another class. Which means in our above example, class A is a subclass of Object and Object is the superclass of A.
+
+Using the above concepts select all the correct statements from the below code:
+class W { // statement 1
+}
+class X { // statement 2
+	...
+}
+class Y extends X { // statement 3
+	...
+}
+class Z1 extends W, Y { // statement 4
+	...
+}
+class Z2 extends Y { // statement 5
+	...
+}
+
+
+
+Answer 
+
+As per statement 5, Z2 is the subclass of Y, X and Object.
 
