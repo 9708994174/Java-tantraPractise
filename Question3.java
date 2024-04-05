@@ -1,41 +1,81 @@
-In implementation inheritance, when the subclass inherits from a superclass (also callled base class), the subclass instance can be referred by the base class reference. For example:
-class A {	
-	public int aValue = 1;
-	public int getAValue() {
-		return aValue;
-	}
-}
-class B extends A {
-	public int bValue = 2;
-	public int getBValue() {
-		return bValue;
-	}
-}
-Then the below statement is valid:
-A a = new B();
-Note: In the above code, we can access all members of class A via the reference a even though the actual object created in memory using the new keyword is an instance of class B.
+Write a Java program to illustrate the abstract class concept.
 
-According to the above code, the statementa.getBValue() will result in compilation error. This is because reference a which is of type class A does not know about the members declared in its subclass B.
+Create an abstract class Shape, which contains an empty method numberOfSides().
 
-See and retype the below code to understand the above concept.
+Define three classes named Trapezoid, Triangle and Hexagon extends the class Shape, such that each one of the classes contains only the method numberOfSides(), that contains the number of sides in the given geometrical figure.
+
+Write a class AbstractExample with the main() method, declare an object to the class Shape, create instances of each class and call numberOfSides() methods of each class.
+
+Sample Input and Output:
+Number of sides in a trapezoid are 4
+Number of sides in a triangle are 3
+Number of sides in a hexagon are 6
 
 
-package q11262;
-public class InheritanceExample {
+
+package q11287;
+
+//Write the code
+
+public class AbstractExample {
 	public static void main(String[] args) {
-		A a = new B();
-		System.out.println("a.getAValue() : " + a.getAValue());
+		Shape s;
+		s = new Trapezoid();
+		s.numberofsides();
+		s = new Triangle();
+		s.numberofsides();
+		s = new Hexagon();
+		s.numberofsides();
 	}
 }
-class A {
-	public int aValue = 1;
-	public int getAValue() {
-		return aValue;
-	}
+
+abstract class Shape
+
+{
+	
+	abstract void numberofsides();
+	
 }
-class B extends A {
-	public int bValue = 2;
-	public int getBValue() {
-		return bValue;
+
+class Trapezoid extends Shape
+
+{
+	
+	void numberofsides()
+	
+	{
+		
+		System.out.println("Number of sides in a trapezoid are 4");
+		
 	}
+	
 }
+
+class Triangle extends Shape
+
+{
+	
+	void numberofsides()
+	
+	{
+		
+		System.out.println("Number of sides in a triangle are 3");
+		
+	}
+	
+}
+
+class Hexagon extends Shape
+
+{
+	
+	void numberofsides()
+	
+	{
+		
+		System.out.println("Number of sides in a hexagon are 6");
+		
+	}
+	
+}
+

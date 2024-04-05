@@ -1,75 +1,22 @@
-Write a Java program to illustrate the single inheritance concept.
+Enumeration means a list of named constant. In Java, enumeration defines a class type.
 
-Create a class Marks
-contains the data members id of int data type, javaMarks, cMarks and cppMarks of float data type
-write a method setMarks() to initialize the data members
-write a method displayMarks() which will display the given data
-Create another class Result which is derived from the class Marks
-contains the data members total and avg of float data type
-write a method compute() to find total and average of the given marks
-write a method showResult() which will display the total and avg marks
-Write a class SingleInheritanceDemo with main() method it receives four arguments as id, javaMarks, cMarks and cppMarks.
+An enum is defined similarly to how a class would be defined. It uses the enum instead of the class keyword. The constant values are listed in the enum’s body. It is common to write the constants in all uppercase letters to make it easier to recognize them.
 
-Create object only to the class Result to access the methods.
-
-If the input is given as command line arguments to the main() as "101", "45.50", "67.75", "72.25" then the program should print the output as:
-Id : 101
-Java marks : 45.5
-C marks : 67.75
-Cpp marks : 72.25
-Total : 185.5
-Avg : 61.833332
-
-
-package q11263;
-
-public class SingleInheritanceDemo {
-	int id;
-	float javaMarks;
-	float cMarks;
-	float cppMarks;
-	public static void main(String[] args){
-		int id = Integer.parseInt(args[0]);
-		float jM = Float.parseFloat(args[1]);
-		float cM = Float.parseFloat(args[2]);
-		float cppM = Float.parseFloat(args[3]);
-		Result obj = new Result();
-		obj.setMarks(id,jM,cM,cppM);
-		obj.displayMarks();
-		obj.compute();
-		obj.showResult();
-	}
+This is an example of how to define an enum.
+enum Subject {
+	JAVA, CPP, C, DBMS
 }
+The elements inside the Subject enum are called enumeration constants
+By default each enumeration constant is public, static and final.
+Variables of Enumeration can be defined directly without using new keyword. Ex Subject = sub1;
+Variables of Enumeration type can have only enumeration constants as value. We define a variable in enum as enum_variable = enum_type.enum_constant;. This can be done as follows. From the above example we can define variable as
+sub1 = Subject.JAVA;
+Enum declaration can be done either outside a Class or inside a Class. But, we cannot declare Enum inside the method
+Enum can have fields, constructors and methods
+Enum may implement many interfaces but cannot extend any class because it internally extends java.lang.Enum, so it can't extend other classes
+In the next lesson we will learn how to Implement enums with switch case.
 
-class Marks{
-	int id;
-	float javaMarks;
-	float cMarks;
-	float cppMarks;
-	
-	public void setMarks(int id,float javaMarks,float cMarks , float cppMarks){
-		this.id = id;
-		this.javaMarks = javaMarks;
-		this.cMarks = cMarks;
-		this.cppMarks = cppMarks;
-	}
-	public void displayMarks(){
-		System.out.println("Id : "+id);
-		System.out.println("Java marks : "+javaMarks);
-		System.out.println("C marks : "+cMarks);
-		System.out.println("Cpp marks : "+cppMarks);
-	}
-}
+ANSWERS 
 
-class Result extends Marks{
-	float total,avg;
-	public void compute(){
-		total = javaMarks + cMarks + cppMarks;
-		avg = total/3;
-	}
-	public void showResult(){
-		System.out.println("Total : "+total);
-		System.out.println("Avg : "+avg);
-	}
-}
-
+Enumeration means list of named constant
+Enum internally extends a class called java.lang.Enum

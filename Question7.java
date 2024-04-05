@@ -1,20 +1,45 @@
-In a class the fields are usually declared with private access modifier. We will learn more about access modifiers in the ensuing sections.
+valueOf():
 
-A field declaration could also contain initialization. For example:
-private int age = 25;
-Field declarations of similar types can be done as a single statement. For example:
-private int age = 25, totalMarks = 100;
-Note that every statement must be terminated by a semicolon.
-
-Identify the errors and correct them.
-
-Note: Please don't change the package name.
-
-package q11155;
-public class Student {
-	private String id;
-	private String name;
-	private int age;
-	private char gender;
+The valueOf() method can be used to obtain an instance of the enum class for a given String value. Here is an example.
+enum Subject{
+JAVA, C, PYTHON
+}
+Iteration can be done for the above enum class using the method value() can be done by
+Subject sub = Subject.valueOf("JAVA");
 }
 
+package q24200;
+public class Test {
+	public static void main(String args[]) {
+		
+		Languages a = Languages.valueOf("JAVA");
+		
+		Languages b = Languages.valueOf("PYTHON");
+		
+		Languages c= Languages.valueOf("C");
+		
+		Languages d = Languages.valueOf("CPP");
+		
+		Languages eee = Languages.valueOf("DBMS");
+		System.out.println(a);
+		
+		System.out.println(b);
+		
+		System.out.println(c);
+		
+		System.out.println(d);
+		
+		System.out.println(eee);
+	
+		
+		// print the instances of all enumeration constants in enum class Languages
+		
+	}
+}
+enum Languages {
+	JAVA,
+	PYTHON,
+	C,
+	CPP,
+	DBMS
+}

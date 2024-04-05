@@ -1,93 +1,58 @@
-Write a Java program to illustrate the multilevel inheritance concept.
+In Java, along with primitives, classes, interfaces and abstract classes, there is yet another type called enum.
 
-Create a class Student
-contains the data members id of int data type and name of string type
-write a method setData() to initialize the data members
-write a method displayData() which will display the given id and name
-Create a class Marks which is derived from the class Student
-contains the data members javaMarks, cMarks and cppMarks of float data type
-write a method setMarks() to initialize the data members
-write a method displayMarks() which will display the given data
-Create another class Result which is derived from the class Marks
-contains the data members total and avg of float data type
-write a method compute() to find total and average of the given marks
-write a method showResult() which will display the total and avg marks
-Write a class MultilevelInheritanceDemo with the main() method which will receive five arguments as id, name, javaMarks, cMarks and cppMarks.
+An enum is essentially a set of named values called as members or elements. Like a class, an enum can also have fields and methods.
 
-Create object only to the class Result to access the methods.
+For example, let us consider the four directions East, West, North and South. We can represent them as primitive int constants or as String literals. Below example uses int constants:
+final int EAST = 1;
+final int WEST = 2;
+final int NORTH = 3;
+final int SOUTH = 4;
+int direction = SOUTH;
+switch (direction) {
+	case EAST:
+		System.out.println("East stands for Light!");
+		break;
+	case WEST:
+		System.out.println("West stands for Strength!");
+		break;
+	case NORTH:
+		System.out.println("North stands for Silence!");
+		break;
+	case SOUTH:
+		System.out.println("South stands for Love!");
+		break;
+	default:
+		System.out.println("Unknown direction value : " + direction);
+}
+In the above example there is no restriction on a value like 5 or 6 being assigned to variable direction. There is no way for the compiler to syntactically enforce the bounds, saying we can assign only values between 1 and 4.
 
-If the input is given as command line arguments to the main() as "99", "Lakshmi", "55.5", "78.5", "72" then the program should print the output as:
-Id : 99
-Name : Lakshmi
-Java marks : 55.5
-C marks : 78.5
-Cpp marks : 72.0
-Total : 206.0
-Avg : 68.666664
+In such situations a more appropriate way to represent directions would be using enums. Enums are used when we are dealing with a known finite set of elements.
+
+See and retype the below code to understand the usage of enum. Enums facilitate type checking during compile type, where the compiler will flag an error if one of the enum elements are not used where that enum type is specified.
 
 
-
-package q11264;
-public class MultilevelInheritanceDemo {
-	int id;
-	float javaMarks;
-	float cMarks;
-	float cppMarks;
-	public static void main(String[] args){
-		int id = Integer.parseInt(args[0]);
-		float jM = Float.parseFloat(args[2]);
-		float cM = Float.parseFloat(args[3]);
-		float cppM = Float.parseFloat(args[4]);
-		Result obj = new Result();
-		obj.setData(id,args[1]);
-		obj.setMarks(jM,cM,cppM);
-		obj.displayData();
-		obj.displayMarks();
-		obj.compute();
-		obj.showResult();
+package q11288;
+public class EnumDemo {
+	public static void main(String[] args) {
+		System.out.println(printDirectionMessage(Direction.EAST));
+		System.out.println(printDirectionMessage(Direction.WEST));
+		System.out.println(printDirectionMessage(Direction.NORTH));
+		System.out.println(printDirectionMessage(Direction.SOUTH));
+	}
+	public static String printDirectionMessage(Direction direction) {
+		switch (direction) {
+			case EAST:
+				return "East stands for Light!";
+			case WEST:
+				return "West stands for Strength!";
+			case NORTH:
+				return "North stands for Silence!";
+			case SOUTH:
+				return "South stands for Love!";
+		}
+		return "Unknown direction. This case will never occur when we use enums.";
 	}
 }
-class Student {
-	int id;
-	String name;
-	public void setData(int id,String name){
-		this.id=id;
-		this.name = name;
-	}
-	public void displayData(){
-		System.out.println("Id : "+id);
-		System.out.println("Name : "+name);
-	}
-}
-
-class Marks extends Student{
-	
-	float javaMarks;
-	float cMarks;
-	float cppMarks;
-	
-	public void setMarks(float javaMarks,float cMarks , float cppMarks){
-		
-		this.javaMarks = javaMarks;
-		this.cMarks = cMarks;
-		this.cppMarks = cppMarks;
-	}
-	public void displayMarks(){
-		
-		System.out.println("Java marks : "+javaMarks);
-		System.out.println("C marks : "+cMarks);
-		System.out.println("Cpp marks : "+cppMarks);
-	}
-}
-
-class Result extends Marks{
-	float total,avg;
-	public void compute(){
-		total = javaMarks + cMarks + cppMarks;
-		avg = total/3;
-	}
-	public void showResult(){
-		System.out.println("Total : "+total);
-		System.out.println("Avg : "+avg);
-	}
+enum Direction {
+	EAST, WEST, NORTH, SOUTH;
 }
