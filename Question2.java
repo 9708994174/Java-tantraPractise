@@ -1,82 +1,60 @@
-Write a Java program to illustrate the abstract class concept.
+An anonymous class is very similar to a local class except that an anonymous class combines both the declaration and definition of the class into a single expression statement.
 
-Create an abstract class CalcArea and declare the methods triangleArea(double b, double h), rectangleArea(double l, double b), squareArea(double s), circleArea(double r).
+Secondly an anonymous class usually implements an interface or extends a class.
 
-Create a class FindArea which extends the abstract class CalcArea used to find areas of triangle, rectangle, square, circle.
+For example the below code shows the difference between an inner class and an anonymous class:
+interface Printer { //this is a top-level interface
+	public void printMe();
+}
+class A {  //this is a normal top-level class
+	public static void main(String[] args) {
+		class PrinterImpl implements Printer { // an example of a normal local class
+			public void printMe() {
+				//do something....
+			}
+		}
 
-Write a class Area with the main() method which will receive two arguments and convert them to double type.
+		Printer myPrinter1 = new PrinterImpl();
 
-If the input is given as command line arguments to the main() as "1.2","2.7" then the program should print the output as:
-Area of triangle : 1.62
-Area of rectangle : 3.24
-Area of square : 1.44
-Area of circle : 22.890600000000006
-
-
-package q11286;
-public class Area {
-	public static void main(String args[]) {
-		FindArea area = new FindArea();
-		area.triangleArea(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
-		area.rectangleArea(Double.parseDouble(args[0]), Double.parseDouble(args[1]));
-		area.squareArea(Double.parseDouble(args[0]));
-		area.circleArea(Double.parseDouble(args[1]));
+		Printer myPrinter2 = new Printer() {// an example of an anonymous class 
+			public void printMe() {
+				//do something....
+			}
+		};
+		
+		myPrinter1.printMe();
+		myPrinter2.printMe();
 	}
 }
-// Write all the classes with definitions
+In the above code, PrinterImpl is a local class that implements the interface Printer. An instance of this local class is created using the statement:
+Printer myPrinter1 = new PrinterImpl();
+The anonymous class which is initializing the reference myPrinter2 has the below properties:
+Anonymous classes do not have names
+An anonymous class is an expression containing a block of code which is terminated by a semicolon ;
+Anonymous class instantiation is done using the new keyword, just like a constructor invocation
+Anonymous class can either implement an interface and there by provide the implementation for its methods or extend a class and override required methods.
+When an anonymous class is implementing an interface, the new keyword is prefixed to the interface name, that is followed by empty parenthesis.
+When an anonymous class is extending a class, the new keyword is prefixed to one of the existing constructors in that class.
+See and retype the below code.
 
-abstract class calcArea {
-	
-	abstract void triangleArea(double b, double h);
-	
-	abstract void rectangleArea(double l, double b);
-	
-	abstract void squareArea(double s);
-	
-	abstract void circleArea(double r);
-	
+package q11297;
+interface Printer {
+	public void printMe();
 }
-
-class FindArea extends calcArea {
-	
-	void triangleArea(double b, double h)
-	
-	{
-		
-		double area = (b*h)/2;
-		
-		System.out.println("Area of triangle : "+area);
-		
+class A {
+	public static void main(String[] args) {
+		class PrinterImpl implements Printer {
+			public void printMe() {
+				System.out.println("I am in printMe method of the local class PrinterImpl instance");
+			}
+		}
+		Printer myPrinter1 = new PrinterImpl();
+		Printer myPrinter2 = new Printer() {
+			public void printMe() {
+				System.out.println("I am in printMe method of the anonymous class");
+			}
+		};
+		myPrinter1.printMe();
+		myPrinter2.printMe();
 	}
-	
-	void rectangleArea(double l, double b)
-	
-	{
-		
-		double area = l*b;
-		
-		System.out.println("Area of rectangle : "+area);
-		
-	}
-	
-	void squareArea(double s)
-	
-	{
-		
-		double area = s*s;
-		
-		System.out.println("Area of square : "+area);
-		
-	}
-	
-	void circleArea(double r)
-	
-	{
-		
-		double area = 3.14*r*r;
-		
-		System.out.println("Area of circle : "+area);
-		
-	}
-	
 }

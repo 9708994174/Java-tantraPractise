@@ -1,81 +1,35 @@
-Write a Java program to illustrate the abstract class concept.
+See and retype the below code. It has two examples of anonymous classes. One is created by implementing an interface Printer and the other by extending a class named Prefixer.
 
-Create an abstract class Shape, which contains an empty method numberOfSides().
+Note that when an anonymous class is implementing an interface, the new keyword is prefixed to the interface name, which is followed by empty parenthesis.
 
-Define three classes named Trapezoid, Triangle and Hexagon extends the class Shape, such that each one of the classes contains only the method numberOfSides(), that contains the number of sides in the given geometrical figure.
+And note that when an anonymous class is extending a class, the new keyword is prefixed to one of the existing constructors in that class.
 
-Write a class AbstractExample with the main() method, declare an object to the class Shape, create instances of each class and call numberOfSides() methods of each class.
-
-Sample Input and Output:
-Number of sides in a trapezoid are 4
-Number of sides in a triangle are 3
-Number of sides in a hexagon are 6
-
-
-
-package q11287;
-
-//Write the code
-
-public class AbstractExample {
+package q11298;
+interface Printer {
+	public void printMe();
+}
+class Prefixer {
+	protected String prefix;
+	public Prefixer(String prefix) {
+		this.prefix = prefix;
+	}
+	public String getPrefixedName(String name) {
+		return prefix + " " + name;
+	}
+}
+class AnonymousExample {
 	public static void main(String[] args) {
-		Shape s;
-		s = new Trapezoid();
-		s.numberofsides();
-		s = new Triangle();
-		s.numberofsides();
-		s = new Hexagon();
-		s.numberofsides();
+		Printer printer = new Printer() {
+			public void printMe() {
+				System.out.println("printMe is called!");
+			}
+		};
+		Prefixer doublePrefixer = new Prefixer("Hello") {
+			public String getPrefixedName(String name) {
+				return prefix + " " + prefix + " " + name;
+			}
+		};
+		printer.printMe();
+		System.out.println(doublePrefixer.getPrefixedName("James"));
 	}
 }
-
-abstract class Shape
-
-{
-	
-	abstract void numberofsides();
-	
-}
-
-class Trapezoid extends Shape
-
-{
-	
-	void numberofsides()
-	
-	{
-		
-		System.out.println("Number of sides in a trapezoid are 4");
-		
-	}
-	
-}
-
-class Triangle extends Shape
-
-{
-	
-	void numberofsides()
-	
-	{
-		
-		System.out.println("Number of sides in a triangle are 3");
-		
-	}
-	
-}
-
-class Hexagon extends Shape
-
-{
-	
-	void numberofsides()
-	
-	{
-		
-		System.out.println("Number of sides in a hexagon are 6");
-		
-	}
-	
-}
-
