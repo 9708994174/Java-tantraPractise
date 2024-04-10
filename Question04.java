@@ -1,26 +1,22 @@
-Write a Java program with a class name OverloadArea with overload methods area(float) and area(float, float) to find area of square and rectangle.
+StringBuilder objects are like String objects, except that they can be modified, means internally these objects are treated like variable-length arrays that contain a sequence of characters. At any point, the length and content of the sequence can be changed through method invocations.
 
-Write the main method within the class and assume that it will receive a total of 2 command line arguments of type float.
+String builders offer certain advantages as they offer better performance and simpler code when compared to strings. For example, if you need to concatenate a large number of strings, appending to a StringBuilder object is more efficient.
 
-If the main() is provided with arguments : 1.34, 1.98 then the program should print the output as:
-Area of square for side in meters 1.34 : 1.7956
-Area of rectangle for length and breadth in meters 1.34, 1.98 : 2.6532001
+Length and Capacity: The StringBuilder class, like the String class, has a method length() that returns the length of the character sequence in the builder.
+
+Unlike strings, every string builder also has a capacity, the number of character spaces that have been allocated. The capacity, which is returned by the capacity() method, is always greater than or equal to the length (usually greater than) and will automatically expand as necessary to accommodate additions to the string builder.
+
+StringBuilder Constructors:
+
+StringBuilder(): Creates an empty string builder with a capacity of 16 (16 empty elements).
+StringBuilder(CharSequence cs): Constructs a string builder containing the same characters as the specified CharSequence, plus an extra 16 empty elements trailing the CharSequence.
+StringBuilder(int initCapacity): Creates an empty string builder with the specified initial capacity.
+StringBuilder(String s): Creates a string builder whose value is initialized by the specified string, plus an extra 16 empty elements trailing the string
 
 
-package q11268;
-public class OverloadArea {
-	// Write the overload methods
-	static float area(float a){
-		return a*a;
-	}
-	static float area(float a,float b){
-		return a*b;
-	}
-	public static void main (String[] args) {
-		// Write the code
-		Float f1 = Float.parseFloat(args[0]);
-		Float f2 = Float.parseFloat(args[1]);
-		System.out.println("Area of square for side in meters " + f1 + " : " +area(f1) ); // Fill in the missing code
-		System.out.println("Area of rectangle for length and breadth in meters " + f1 + ", " + f2 + " : " +area(f1,f2) ); // Fill in the missing code
-	}
-}
+
+Answer
+
+Initial capacity of string builder is 16
+
+String builders are mutable.

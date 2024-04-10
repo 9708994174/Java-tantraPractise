@@ -1,31 +1,14 @@
-In Java Object is the root class of all classes. Which means that all the methods of Object class described below are also present in each and every class in Java.
-clone() - creates and returns a copy of this object. However, for this method to work the class has to implement Cloneable interface.
-equals(Object obj) - it compares if two references are pointing to the same address. However, you can override this method to provide custom implementation which will verify the contents and not just references.We will learn more about it in the later sections.
-finalize() - this method is called by the garbage collector on an object when garbage collection determines that there are no more references to the object. Programmers do not call it, but can override and write cleanup code in it.
-getClass() - this method returns the in-memory runtime representation of the Class object that was loaded and used to create the instance. For example:
-Student st = new Student();
-Class clazz = st.getClass();
-The reference clazz points to the Class object which has the details of the Student class loaded in memory.
-hashCode() - this method returns a hash code value (an integer) for the object. (we will learn more about it in data structures)
-toString() - this method returns the string representation of the object.
-There are many other methods like notify, notifyAll, and wait which are used to synchronize data access and method calls when multiple threads are involved.
-
-See and retype the below code and observe the output to understand the usage of getClass() method
+The StringBuffer class is a thread-safe, mutable sequence of characters.These are different types of string buffer constructors. They are
+public StringBuffer(): Constructs a string buffer with no characters in it and an initial capacity of 16 characters.
+public StringBuffer(int capacity): Constructs a string buffer with no characters in it and the specified initial capacity. It throws NegativeArraySizeException if the capacity argument is less than 0
+public StringBuffer(String str): Constructs a string buffer initialized to the contents of the specified string. The initial capacity of the string buffer is 16 plus the length of the string argument. It throws NullPointerException if str is null
+public StringBuffer(CharSequence seq): Constructs a string buffer that contains the same characters as the specified CharSequence. The initial capacity of the string buffer is 16 plus the length of the CharSequence argument. If the length of the specified CharSequence is less than or equal to zero, then an empty buffer of capacity 16 is returned. It throws NullPointerException if seq is null
 
 
 
-package q11278;
-public class GetClassExample {
-	public static void main(String[] args) {
-		A a = new A();
-		B b = new B();
-		String text = "Ganga";
-		System.out.println("a.getClass() : " + a.getClass());
-		System.out.println("b.getClass() : " + b.getClass());
-		System.out.println("text.getClass() : " + text.getClass());
-	}
-}
-class A {
-}
-class B {
-}
+Answer 
+
+
+Initial capacity of string buffer constructor is 16 characters.
+
+public StringBuffer(CharSequence seq), if seq is null it throws NullPointerExceotion.

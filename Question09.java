@@ -1,51 +1,31 @@
-Write a Java program to illustrate the usage of super keyword.
+The below code is used to understand the difference between String and StringBuilder objects. When we try to concatenate two strings using string operations a new object is created without changing the old one. In StringBuilder existing object is modified. In the below program this can be illustrated by comparing Hash Code for String object after every concat operation. Fill the missing code in the below program and observe the output.
 
-Create a class called Animal with the below members:
-a constructor which prints Animal is created
-a method called eat() which will print Eating something and returns nothing.
-Create another class called Dog which is derived from the class Animal, and has the below members:
-a constructor which calls super() and then prints Dog is created
-a method eat() which will print Eating bread and returns nothing
-a method bark() which will print Barking and returns nothing
-a method work() which will call eat() of the superclass first and then the eat() method in the current class, followed by the bark() method in the current class.
-Write a class ExampleOnSuper with the main() method, create an object to Dog which calls the method work().
+Sample Input and Output:
+In Strings before concatenation Hash Code is: 2081
+In Strings after concatenation Hash Code is: 64578
+In StringBuilder before concatenation Hash Code is: 321001045
+In StringBuilder after concatenation Hash Code is: 321001045
 
 
-package q11273;
-class Animal {
-	public Animal() {
-		System.out.println("Animal is created");
-		
-	}
-	void eat() {
-		System.out.println("Eating something");
-		
-	}  
-}  
-class Dog extends Animal { 
-	public Dog() {
-		System.out.println("Dog is created");
-		
-		
-	}
-	void eat() {
-		System.out.println("Eating bread");
-		
-	}
-	void bark() {
-		System.out.println("Barking");
-		
-	}  
-	void work() {  
-		super.eat();
-		eat();
-		bark();
-		
-	}  
-}  
-public class ExampleOnSuper { 
+
+package q24216;
+public class StringBuilderDemo {
 	public static void main(String args[]) {
-		Dog d = new Dog();  
-		d.work();  
+		String s = new String("AB");
+		System.out.print("In Strings before concatenation Hash Code is: ");
+		System.out.println(s.hashCode());
+		s += "C";
+		// print hash code after concatenating
+		System.out.println(s.hashCode());
+		StringBuilder sb = new StringBuilder("AB");
+		// print hash code before concatenating
+		System.out.println(sb.hashCode());
+		// add string C to AB 
+		s+="C";
+		// print hash code after concatenating
+		System.out.println(sb.hashCode());
+		
+		// and observe the output
+		
 	}
 }

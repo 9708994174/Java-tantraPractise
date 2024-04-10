@@ -1,24 +1,34 @@
-Write a class EndsWith with a main method. The method receives two command line arguments. Print true if the first argument ends with the second argument (ignoring case), else print false.
+The below program explains different StringBuffer constructors. Follow the comments given below and write the missing code.
 
-Example:
-Cmd Args : Godavari ri
-true
-[Hint: Since we have to verify ignoring the case, you may want to first convert both either to lower or upper case before comparing.]
+The below program has a class StringbufferExample with main method. The program takes input from the command line arguments. Print the output as follows.
+
+Sample Input and Output:
+Cmd Args : Hello World
+Initial capacity is: 16
+Capacity after passing parameter is: 27
+Creating a StringBuffer object with the given capacity: 50
 
 
-package q11205;
-public class EndsWith {
-	
-	
-	public static void main(String args[]){
+package q24215;
+public class StringbufferExample {
+	public static void main (String args[]) {
+		// create instance of StringBuffer
+		// find the initial capacity
+		//find the capactiy after passing a parameter args[0] using command line argument
+		// find the capatity by intializing capatity to 50
+		StringBuffer Initial=new StringBuffer();
 		
-		String s1=args[0].toLowerCase();
+		System.out.println("Initial capacity is: "+ Initial.capacity());
 		
-		if(s1.endsWith(args[1].toLowerCase())) System.out.println("true") ;
+		Initial=new StringBuffer(args[0]);
 		
-		else System.out.println("false");
+		System.out.println("Capacity after passing parameter is: "+Initial.capacity());
 		
+		Initial=new StringBuffer(50);
+		
+		System.out.println("Creating a StringBuffer object with the given capacity: "+Initial.capacity());
 		
 	}
 }
+
 
