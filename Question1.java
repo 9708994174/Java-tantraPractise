@@ -1,56 +1,17 @@
-A nested class which is declared inside a block (between an opening and closing brace) is called a local class.
+Among the various classes available in java.lang package, System is one of the most commonly used classes after String.
 
-Inner classes are also local classes. However, to differentiate between inner and local classes, we use the term local class to a class which is declared inside a method or a conditional or a loop block. For example:
-class A { //this is called a top-level class
-	class B { //this is an inner class
-	}
-	static class C { //this is an inner class
-	}
-	public void someMethodInClassA() {
-		class D {
-		}
-	}
-}
-In the above code,
-A is called a top-level class
- B is called an inner class
-C is called a static nested class and
-D is called a local class
-Local classes can access instance members of their enclosing class.
+The System class can neither be instantiated (since it has a private constructor) nor can be extended (since it is declared as final).
 
-The visibility of the local class is restricted to the scope of the enclosing block (braces).
-
-Note that local classes cannot have static methods or interfaces as members. We can have fields marked as static provided they are also marked as final (such fields are called as constants).
-
-See and retype the below code.
+System class has three important public static fields:
+out - is accessed as System.out. This out field is of type PrintStream. The out refers to the standard output stream.
+err - is accessed as System.err. This err field is of type PrintStream. The err refers to the standard error stream.
+in - is accessed as System.in. This in field is of type InputStream. The in refers to the standard input stream.
+The System class provides a method called System.console(), which returns the java.io.Console object associated with the running Java process (Java Virtual Machine). Select all the correct statement given below.
 
 
-package q11296;
-public class A {
-	private int value = 7;
-	class B {
-		private B() {
-			System.out.println("In inner class B's constructor");
-		}
-	}
-	static class C {
-		private C() {
-			System.out.println("In static nested class C's constructor");
-		}
-	}
-	public void someMethodInClassA() {
-		class D {
-			private D() {
-				System.out.println("In local class D's constructor");
-				System.out.println("value = " + value);
-			}
-		}
-		D d = new D();
-	}
-	public static void main(String[] args) {
-		A a = new A();
-		A.B b = new A().new B();
-		A.C c = new A.C();
-		a.someMethodInClassA();
-	}
-}
+
+Answer
+
+In the statement
+System.out.println("Uranus");
+println is a method.
