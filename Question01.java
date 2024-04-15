@@ -1,52 +1,38 @@
-In memory management terminology, garbage means that portion of memory which was once occupied by objects and is currently no longer used by the program.
+Java collection framework has included a very useful utility class called Arrays.
 
-Garbage collection (GC) means reclaiming such memory so that, that space can be used for allocation to other objects.
+Please note that the class we are talking about java.util.Arrays is completely different from the class java.lang.reflect.Array.
 
-In Java programming language, the JVM (Java Virtual Machine) which is responsible for running the Java application performs automatic garbage collections.
+java.lang.reflect.Array class is part of java.lang.reflect package, and it allows for dynamic creation and manipulation of an array.
 
-The automatic garbage collection in Java is performed by a special thread called Garbage Collector, which is a part of JVM.
+Arrays on other hand is a class in java.util package.
 
-Garbage Collector does not reclaim the memory of objects that are still in use. It only reclaims the memory of objects which are no longer in use.
+Arrays is a utility class. A Utility class is a class which contains static methods and has a private constructor so that it cannot be instantiated.
 
-An object is created and assigned memory when we use the new keyword followed by a constructor call.
+This class has many useful searching and sorting methods which operate on arrays.
 
-The reference  holds the address of the object in the memory.
+See and retype the below code to know the usage of a few commonly used methods like :
+asList(T...arrayElement)
+sort(int[] array)
+fill(int[] array, int value)
+equals(int[] array, int value)
+copyOfRange(int[] original, int from, int to)
+Note in the below code the main method uses ellipses(...) instead of a String[].
 
-That portion of memory in which the Java objects reside is called heap.
 
-When the program no longer uses an object, such an object is called unreferenced object.
-
-For example:
-public class A {
-	private String text1 = "Bali Islands";		// statement 1
-	public String haveSomeFun() {
-		String text2 = "Fly to " + text1;	// statement 2
-		System.out.println(text2);		// statement 3
+package q11313;
+import java.util.*;
+public class ArraysDemo {
+	public static void main(String ... args) {
+		List<Integer> integerList = Arrays.asList(3, 33, 333, 3333);
+		System.out.println("integerList : " + integerList);
+		Integer[] integerArr = {382, 34, 4, 223, 331};
+		System.out.println("Original integerArr : " + Arrays.asList(integerArr));
+		Arrays.sort(integerArr);
+		System.out.println("After sorting integerArr : " + Arrays.asList(integerArr));
+		Integer[] integerArr2 = {4, 34, 223, 331, 382};
+		System.out.println("Arrays.equals(integerArr, integerArr2) : " + Arrays.equals(integerArr, integerArr2));
+		Integer[] integerArr3 = new Integer[10];
+		Arrays.fill(integerArr3, 7);
+		System.out.println("After filling integerArr3 with 7 : " + Arrays.asList(integerArr3));
 	}
 }
-public class ATest {
-	public static void main(String[] args) {
-		A a = new A();				// statement 4
-		a.haveSomeFun();			// statement 5
-		System.out.println("Happy holidays!");	// statement 6
-	}
-}
-In the above code, after statement 4 is executed, we have reference a pointing to an object created in the heap.
-
-Similarly, inside the instance pointed by a, we have another reference text1 (which is declared in statement 1) also pointing to a String object in memory.
-
-However, note that the object referenced by text2 declared in the statement 2 is not yet created in memory.
-
-The reference text2 will become alive only during the execution of the method invocation on reference a in statement 5.
-
-After executing the statement 5, when the JVM is executing statement 6, the reference text2, whose scope was local to the method haveSomeFun() is no longer alive even though the object is in the memory. Such objects are called unreferenced objects.
-
-Garbage collector identifies such objects (which are there in memory but are no longer referenced) and reclaims their memory.
-
-
-
-Answer
-Object a1 = new Object(); //statement 1
-Object a2 = new Object(); //statement 2
-a2 = a1;
-In the above code, the initial object referred by a2 in statement 2 will be available for GC after the statement a2 = a1; is executed.

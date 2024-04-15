@@ -1,16 +1,37 @@
-The principal operations on a StringBuilder that are not available in String are the append() and insert() methods, which are overloaded so as to accept data of any type. Each converts its argument to a string and then appends or inserts the characters of that string to the character sequence in the string builder.
+DateFormat is an abstract class which provides methods for parsing text to Date objects and formating Date objects to text.
 
-The append method always adds the characters at the end of the existing character sequence, while the insert method adds the characters at a specified point.
+DateFormat class has static methods to create instance of DateFormat objects.
+DateFormat df1 = DateFormat.getInstance(); 
+// the above code creates a date and time formatter instance which uses the SHORT style
 
-There are a number of methods of the StringBuilder class. These are few examples
-StringBuilder append(Object obj) Appends the argument to this string builder. The data is converted to a string before the append operation takes place.
-StringBuilder delete(int start, int end) This method deletes the subsequence from start to end-1 (inclusive) in the StringBuilder's char sequence
-StringBuilder insert(int offset, int i) Inserts the second argument into the string builder. The first integer argument indicates the index before which the data is to be inserted. The data is converted to a string before the insert operation takes place.
-StringBuilder reverse(): Reverses the sequence of characters in this string builder. String toString(): Returns a string that contains the character sequence in the builder.
-'
+DateFormat df2 = DateFormat.getDateInstance(); 
+// the above line creates a date foramatter instance with system's Locale  
 
-Answers
+DateFormat df3 = DateFormat.getDateInstance(DateFormat.LONG, Locale.FRANCE);
+// the above line creates a date formatter instance with French Locale in long format
+A Locale object represents a specific geographical, political, or cultural region and their attributes. For example, the month August is called August in English and Août in French.
 
-append() and insert() operations are not available in strings
+The Locale class allows for displaying numbers, currencies, date and time information according to user's native language, country and cultural settings.
 
-insert() method adds the character at the specified index
+SimpleDateFormat is one of the most useful implementation sub-class of DateFormat class.
+
+Note that the formatting classes like DateFormat and SimpleDateFormat are present in the java.text package.
+
+
+Write a class named DateFormatInJapan with a static method getJapaneseShortDate(). The method should accept one parameter of type Date. It should return a formatted date as String from the passed parameter using JAPAN locale in SHORT format.
+
+Sample Output:
+Oct 2, 1869 in Japan is: 1869/10/02
+
+
+package q11398;
+import java.util.*;
+import java.text.*;
+public class DateFormatInJapan {
+	public static String getJapaneseShortDate(Date date) {
+		Format f=new SimpleDateFormat("yyyy/MM/dd");
+		String ans=f.format(date);
+		return ans;
+		
+	}
+}

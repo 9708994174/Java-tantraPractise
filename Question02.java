@@ -1,16 +1,30 @@
-In Java, the constructors are used to prepare a newly created object for use by initilaizing values passed to it as parameters.
+Like the class Arrays which deals with arrays, Java collection framework also has a utility class called Collections which deals with collections.
 
-Similarly, when the GC (Garbage Collector) decides to remove an object from memory, it calls the finalize() method on the object.
+Please note that the class java.util.Collections is completely different from the interface java.util.Collection.
 
-The finalize() method is declared in the Object class. Hence it is available in every class.
+java.util.Collection class is the root interface for all the collection classes.
 
-The default finalize() method available in the Object class does not do anything.
+Collections on other hand is a utility class, which contains static methods and has a private constructor so that it cannot be instantiated.
 
-A Java class can override and provide its special implementation in the finalize() method.
+This class has many useful searching and sorting methods which operate on various collections.
 
-Normally we do not override finalize to provide any special implementation. However, it is good to know that we do not call the finalize() method, it is the GC which calls it.
+See and retype the below code to know the usage of a few commonly used methods like :
+shuffle(List<?> list)
+sort(List<T> list)
+fill(List<? super T> list, T obj)
+Note in the below code the main method uses ellipses(...) instead of a String[].
 
-
-Answer
-
-GC (Garbage Collector Thread) automatically calls the finalize method of the object whenever it is trying to reclaim the memory occupied by the object.
+package q11314;
+import java.util.*;
+public class CollectionsDemo {
+	public static void main(String ... args) {
+		List<Integer> integerList = Arrays.asList(3, 33, 333, 3333, 33333, 333333);
+		System.out.println("integerList : " + integerList);
+		Collections.shuffle(integerList, new Random(1));
+		System.out.println("After shuffle integerList : " + integerList);
+		Collections.sort(integerList);
+		System.out.println("After sort integerList : " + integerList);
+		Collections.fill(integerList, 7);
+		System.out.println("After filling integerList with 7 : " + integerList);
+	}
+}

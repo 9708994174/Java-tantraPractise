@@ -1,22 +1,30 @@
-StringBuilder objects are like String objects, except that they can be modified, means internally these objects are treated like variable-length arrays that contain a sequence of characters. At any point, the length and content of the sequence can be changed through method invocations.
+The Date class is a simple wrapper over an instance of time, represented as a long, just like the Integer class is a wrapper over an int value.
 
-String builders offer certain advantages as they offer better performance and simpler code when compared to strings. For example, if you need to concatenate a large number of strings, appending to a StringBuilder object is more efficient.
+A Date object can be created using one of the below two constructors:
+Date() - creates a new instance of Date object which represents the time at which it is created.
+Date(long time) - creates a new instance of Date object which represents the specified number of milliseconds specified by the variable time, starting from the "the epoch", namely January 1, 1970, 00:00:00 GMT
+The various methods in the Date class like getDay(), getHour(), getYear() etc., are all deprecated and should not be used.
 
-Length and Capacity: The StringBuilder class, like the String class, has a method length() that returns the length of the character sequence in the builder.
+We should instead use their alternatives provided in the Calendar class. We will learn more about the Calendar class later.
 
-Unlike strings, every string builder also has a capacity, the number of character spaces that have been allocated. The capacity, which is returned by the capacity() method, is always greater than or equal to the length (usually greater than) and will automatically expand as necessary to accommodate additions to the string builder.
+Date class has one useful method called getTime() which returns the number of milliseconds starting from January 1, 1970, 00:00:00 GMT represented by a date object as a long.
 
-StringBuilder Constructors:
+Note: System class also has a method called System.currentTimeMillis() which will return the current time as milliseconds from the epoch time (January 1, 1970, 00:00:00 GMT) as a long value.
 
-StringBuilder(): Creates an empty string builder with a capacity of 16 (16 empty elements).
-StringBuilder(CharSequence cs): Constructs a string builder containing the same characters as the specified CharSequence, plus an extra 16 empty elements trailing the CharSequence.
-StringBuilder(int initCapacity): Creates an empty string builder with the specified initial capacity.
-StringBuilder(String s): Creates a string builder whose value is initialized by the specified string, plus an extra 16 empty elements trailing the string
+See and retype the below code.
 
 
-
-Answer
-
-Initial capacity of string builder is 16
-
-String builders are mutable.
+package q11397;
+import java.util.*;
+public class DateExample {
+	public static void main(String ... args) throws InterruptedException {
+		System.out.println("Sleeping for 1 second...");
+		Date timeAsDate = new Date();
+		long oldTimeInMillis = timeAsDate.getTime();
+		Thread.sleep(1000);
+		long newCurrentTimeInMillis = System.currentTimeMillis();
+		if (newCurrentTimeInMillis - oldTimeInMillis >= 1000) {
+			System.out.println("This thread resumed after 1 or more seconds");
+		}
+	}
+}
