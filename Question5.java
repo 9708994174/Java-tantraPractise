@@ -1,42 +1,41 @@
-In Java, Throwable is the super class for all Error classes and Exception classes.
+Write a Java program to handle an ArithmeticException divide by zero using exception handling.
 
-Among hundreds of exception and error classes, below are few commonly used ones and their exception hierarchy:
-                         Throwable
-                             |
-       ______________________|___________________							
-       |					 	                 |
-     Error                                   Exception			
-       |                                _________| 
-       |								|    IOException
-       |-- VirtualMachineError          |        |-- ParseException
-       |-- OutOfMemoryError             |        |-- InterruptedException
-       |-- StackOverflowError           |
-                                 RuntimeException
-                                        |
-                                        |-- NullPointerException
-                                        |-- ArithmeticException
-                                        |-- IllegalArgumentException
-                                        |               |
-                                        |        NumberFormatException
-                                        |
-                                        |-- IndexOutOfBoundsException
-                                              |
-                                              |--ArrayIndexOutOfBoundsException
-                                              |--StringIndexOutOfBoundsExceptionIn the above hierarchy, Throwable and all subclasses of Throwable that are not subclasses of either RuntimeException or Error are called checked exceptions.
+Write a class called Division with a main() method. Assume that the main() method will receive two arguments which have to be internally converted to integers.
 
-All the other subclasses of Error and RuntimeException are called unchecked exceptions.
+Write code in the main() method to divide the first argument by the second (as integers) and print the result (i.e the quotient).
 
-The Throwable class stores the method call stack trace and also the error message that is printed when an exception occurs.
-
-Even though we have classes called Error and Exception as the main subclasses of Throwable, the whole concept of handling the exception scenarios is called exception handling. We do not say Throwable-handling, Error-handling and Exception-handling separately based on their class names. In general programming terminology, the concepts along with the constructs which are employed to handle erroneous or abnormal situations is called exception handling.
+If the command line arguments to the main() method are "12", "3", then the program should print the output as:
+Result = 4
+If the command line arguments to the main() method are "55", "0", then the program should print the output as:
+Exception caught : divide by zero occurred
 
 
-Answer
 
-RuntimeException is an unchecked exception.
+package q11329;
+public class Division {
+	
+	public static void main (String args[]) {
+		
+		int num1 = Integer.parseInt(args[0]);
+		
+		int num2 = Integer.parseInt(args[1]),result = 0;
+		
+		try{
+			
+			result = num1/num2;
+			
+			System.out.println("Result = " +result);
+			
+		}
+		
+		catch (ArithmeticException e) {
+			
+			System.out.println ("Exception caught : divide by zero occurred" );
+			
+		}
+		
+	}
+	
+}
 
-
-NullPointerException is an unchecked exception.
-
-
-ArithmeticException is an unchecked exception.
+	

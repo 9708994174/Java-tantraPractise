@@ -1,30 +1,36 @@
-An exception by its very definition is something which is not normal.
+The syntax for try-catch-finally syntax is as given below:
+try {// try block} catch (ExceptionName1referenceName1) {// catch block} catch (ExceptionName2referenceName2) {// another catch block} finally {// finally block}The block of code which is just after the try keyword is called the try block.
 
-In programming, if the program does not run as expected due to some abnormal event or situation, the error produced is called an exception.
+The block of code which is just after the catch keyword is called the catch block.
 
-Java provides easy to use constructs to handle such situations.
+The block of code which is just after the finally keyword is called the finally block.
 
-Even before we learn how to handle exceptions let us see an exception and try fixing it.
+There can be a try block with only catch blocks and without the finally block.
 
-The below example code when run produces an exception called java.lang.ArithmeticException.
+Similarly there can be a try block without catch blocks and with just one finally block.
 
-Click on Submit button to see the exception details as given below.
+Below is an example which demonstrates the usage of try, catch and finally.
 
-Caused by: java.lang.ArithmeticException:  / by zero // it has exception class name followed by  error message 
-        at ExceptionDemo1.main(ExceptionDemo1.java: 5 )	// it has the class/method name and the  line number  which triggered the exception
-        ... 6 more
+Note that in the below code line 6 : Integer.parseInt(text1); will throw an NumberFormatException, since reference text1 has a value "3g" which cannot be parsed into an integer.
 
-After you click on Submit and see the exception message, replace the value 0 of the divisor variable with 2 to fix the problem.
+When the exception is thrown, the try block does not complete normally, meaning the control flow will jump from line 6 into the catch block. And after the catch block is executed it will later enter into the finally block and execute the code it.
 
-Important: Please note that the blue animating arrow which is shown when you click Submit, is shown by our intelligent error detection system. When you start coding using a regular IDE during work, you will not be helped like this. You will only be provided the error information (stack trace) without this animating arrow. Hence, learning how to read and understand exception stack traces becomes an essential part of programming.
+Click on  to understand the working of try, catch and finally constructs.
 
 
-package q11317;
-public class ExceptionDemo1 {
+package q11325;
+public class TryCatchDemo2 {
 	public static void main(String[] args) {
-		int number = 34;
-		int divisor = 2;
-		int result = number / divisor;
-		System.out.println("result = " + result);
+		String text1 = "3g";
+		int value1 = 0;
+		try {
+			value1 = Integer.parseInt(text1);
+			System.out.println("Successfully parsed text1 as integer");
+		} catch (NumberFormatException e) {
+			System.out.println("Unable to parse text1 as integer");
+		} finally {
+			System.out.println("Inside finally block");
+		}
 	}
 }
+

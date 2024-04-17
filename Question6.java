@@ -1,33 +1,86 @@
-An exception is thrown to signal an error condition.
+Write a Java program to handle an ArithmeticException divided by zero by using try, catch and finally blocks.
 
-Java provides a way to catch the exceptions and handle them by either taking corrective course of action or notifying the user or doing what ever is needed.
+Write the main() method with in the class MyFinallyBlock which will receive four arguments and convert the first two into integers, the last two into float values.
 
-This handling is done using a try-catch block or propagating the exception to the caller.
+Write the try, catch and finally blocks separately for finding division of two integers and two float values.
 
-The compiler flags an error if we invoke methods which throw checked exceptions and do not handle them.
-
-For example, the static method Thread.sleep(long milliSeconds) in Thread class throws an InterruptedException, which is of type checked exception. Below code demonstrates the usage of try-catch block. Notice how the statement containing the call to the sleep method is wrapped in the try-catch block.
-
-try{// try-catch block start
-	Thread.sleep(2000);
-}catch (InterruptedException e) {// catch clause 
-	e.printStackTrace();
-}// try-catch block endClick on Submit to see the error.
-
-To fix the code, write the try-catch block appropriately.
-
+If the input is given as command line arguments to the main() as "10", "4", "10", "4" then the program should print the output as:
+Result of integer values division : 2
+Inside the 1st finally block
+Result of float values division : 2.5
+Inside the 2nd finally block
+If the input is given as command line arguments to the main() as "5", "0", "3.8", "0.0" then the program should print the output as:
+Inside the 1st catch block
+Inside the 1st finally block
+Result of float values division : Infinity
+Inside the 2nd finally block
 
 
-package q11322;
-public class TryCatchDemo {
-	public static void main(String[] args) {
-		System.out.println("Before sleep...");
-	try{	Thread.sleep(2000);
-	}catch(InterruptedException e) {	
-		e.printStackTrace();
+
+package q11330;
+public class MyFinallyBlock {
+
 		
-	}
-		System.out.println("After sleep...");
-	
+		public static void main(String[] args) {
+			
+			int  a=Integer.parseInt(args[0]);
+			
+			int  b=Integer.parseInt(args[1]);
+			
+			float  c=Float.parseFloat(args[2]);
+			
+			float  d=Float.parseFloat(args[3]);
+			
+			try{
+				
+				
+				
+				try{
+					
+					System.out.println("Result of integer values division : "+a/b);
+					
+				}catch (ArithmeticException e)
+				
+				{
+					
+					System.out.println("Inside the 1st catch block");
+					
+				}finally{
+					
+					System.out.println("Inside the 1st finally block");
+					
+				}
+				
+				
+				
+				try{
+					
+					System.out.println("Result of float values division : "+c/d);
+					
+				}catch (ArithmeticException e)
+				
+				{
+					
+					System.out.println("/by Zero");
+					
+					
+					
+				}finally{
+					
+					System.out.println("Inside the 2nd finally block");
+					
+				}
+				
+			}catch (Exception e) {
+				
+				System.out.println("Exception");
+				
+			}
+			
+			
+			
+		
+		
+			}
 }
-}
+		
